@@ -18,9 +18,9 @@
                </div>
                <div className="login-button-holder">
                   <button id="login-button" className="btn" type="submit">Log In <i className="fa fa-gamepad" aria-hidden="true"></i></button>
-                  <span id="or-span">OR</span>
-                  <button className="btn" type="submit">Create New User</button>
-              </div>
+                  <span id="or-span">First Time Visiting the Queue? <i className="fa fa-arrow-right" aria-hidden="true"></i></span>
+                  <button id="create-newuser-button" className="btn" type="submit">Create New User</button>
+                </div>
              </form>
         </div>
      )

@@ -4,6 +4,7 @@ var Backbone = require('backbone');
 
 
 var LogInContainer = require('./components/login.jsx').LogInContainer;
+var CreateUserContainer = require('./components/createuser.jsx').CreateUserContainer;
 
 var AppRouter = Backbone.Router.extend({
     routes: {
@@ -11,7 +12,7 @@ var AppRouter = Backbone.Router.extend({
     },
     login: function(){
       ReactDOM.render(
-        React.createElement(LogInContainer),
+        React.createElement(CreateUserContainer),
         document.getElementById('app')
       );
     }

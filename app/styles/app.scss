@@ -22,9 +22,6 @@ img {
 body{
   background-color: #262831;
 }
-h1{
-  color: #00AC1C;
-}
 h2{
   color: #00AC1C;
 }
@@ -32,21 +29,43 @@ h2{
 // END EXAMPLE LAYOUT
 //
 
+////////////////////////////////////////////
 
 //
-//LOGIN
+//LOGIN STYLE
 //
 label{
   color: #00AC1C;
+}
+.login-button-holder{
+  text-align: center;
 }
 #login-button{
   background-color: #00AC1C;
   font-weight: bold;
   font-size: 16px;
+  float: left;
 }
 #or-span{
-  color: white;
+  color: #B2B4B3;
+  font-size: 20px;
+}
+#create-newuser-button{
+  float: right;
+  background-color: #262831;
+  color: #00AC1C;
 }
 //
-//END LOGIN
+//END LOGIN STYLE
 //
+
+////////////////////////////////////////////
+
+//
+//CREATE USER
+//
+.create-account-btn{
+  background-color: #00AC1C;
+  font-weight: bold;
+  font-size: 16px;
+}
