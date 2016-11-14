@@ -15,3 +15,38 @@ $icon-font-path: '../../node_modules/bootstrap-sass/assets/fonts/bootstrap/';
 img {
   max-width: 100%;
 }
+
+//
+// EXAMPLE LAYOUT
+//
+body{
+  background-color: #262831;
+}
+h1{
+  color: #00AC1C;
+}
+h2{
+  color: #00AC1C;
+}
+//
+// END EXAMPLE LAYOUT
+//
+
+
+//
+//LOGIN
+//
+label{
+  color: #00AC1C;
+}
+#login-button{
+  background-color: #00AC1C;
+  font-weight: bold;
+  font-size: 16px;
+}
+#or-span{
+  color: white;
+}
+//
+//END LOGIN
+//
