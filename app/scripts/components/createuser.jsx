@@ -34,7 +34,7 @@ var CreateUser = React.createClass({
             <input className="form-control" name="gamertag" id="gamertag" type="text" placeholder="gamertag" />
           </div>
 
-          <button className="btn create-account-btn" type="submit">Create an Account <i className="fa fa-gamepad" aria-hidden="true"></i></button>
+          <button className="btn create-account-btn" type="submit">Create Account <i className="fa fa-gamepad" aria-hidden="true"></i></button>
         </form>
       </div>
     )
