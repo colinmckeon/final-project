@@ -14,7 +14,7 @@ var AppRouter = Backbone.Router.extend({
     },
 
     initialize: function(){
-      setupParse('overwatch', 'harambe');
+      setupParse('genji', 'junkrat');
     },
     login: function(){
       ReactDOM.render(

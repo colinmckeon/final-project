@@ -7,13 +7,13 @@ var User = Backbone.Model.extend({
     password: ''
   },
   idAttribute: 'objectId',
-  urlRoot: 'https://colinmck.herokuapp.com/users',
+  urlRoot: 'https://colinmck14.herokuapp.com/users',
   parse: function(data){
     return data.results;
   },
   logIn: function(email, password){
     var self = this;
-    var loginUrl = 'https://colinmck.herokuapp.com/' + 'login?username=' + encodeURI(email) + '&password=' + encodeURI(password);
+    var loginUrl = 'https://colinmck14.herokuapp.com/' + 'login?username=' + encodeURI(email) + '&password=' + encodeURI(password);
 
     $.ajax(loginUrl).then(function(response){
       self.set(response)
