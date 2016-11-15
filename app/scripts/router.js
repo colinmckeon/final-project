@@ -12,6 +12,7 @@ var AppRouter = Backbone.Router.extend({
       '': 'login',
       'newUser/': 'newUser'
     },
+    
     initialize: function(){
       setupParse('overwatch', 'harambe');
       $.ajaxSetup({
@@ -19,12 +20,8 @@ var AppRouter = Backbone.Router.extend({
           console.log('beforeSend mash');
           xhr.setRequestHeader("X-Mashape-Key", "64ygDWoKx7mshue5RJgLaVom1n5lp12Bzfejsnkr3S0j0ATb5P");
           xhr.setRequestHeader("Accept", "application/json");
-
         }
       });
-
-      // console.log($.get('https://igdbcom-internet-game-database-v1.p.mashape.com/games/'));
-
     $.get('https://igdbcom-internet-game-database-v1.p.mashape.com/games/?fields=name%2Ccover').then(function(data){
       console.log(data);
     });

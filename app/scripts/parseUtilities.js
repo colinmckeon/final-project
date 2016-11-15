@@ -8,7 +8,6 @@ function setupParse(appId, apiKey, sessionId){
 
       if(sessionId){
         xhr.setRequestHeader("X-Parse-Session-Token", sessionId);
-
       }
     }
   });
