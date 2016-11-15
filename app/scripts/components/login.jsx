@@ -8,7 +8,7 @@ var User = require('../models/models.js').User;
    getInitialState: function(){
      return{
        email: '',
-       password: ''
+       password: '',
      };
    },
    handleLogIn: function(e){
@@ -17,7 +17,8 @@ var User = require('../models/models.js').User;
      var email = this.state.email;
      var password = this.state.password;
 
-     this.props.logIn(username, password);
+
+     this.props.logIn(email, password);
    },
    handleEmailInput: function(e){
      this.setState({email: e.target.value})
@@ -58,9 +59,10 @@ var User = require('../models/models.js').User;
        user: new User()
      }
    },
-   logIn: function(){
-     this.state.user.set({email: email, password: password});
+   logIn: function(email, password){
+     this.state.user.set({username: email, password: password});
      this.state.user.logIn(email, password)
+     console.log(email);
    },
    render: function(){
      return (

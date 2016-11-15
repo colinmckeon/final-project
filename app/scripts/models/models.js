@@ -12,12 +12,14 @@ var User = Backbone.Model.extend({
     return data.results;
   },
   logIn: function(email, password){
-    // console.log(this.urlRoot);
-    var loginUrl = 'https://colinmck.herokuapp.com/' + 'login?email=' + encodeURI(email) + '&password=' + encodeURI(password);
+    var self = this;
+    var loginUrl = 'https://colinmck.herokuapp.com/' + 'login?username=' + encodeURI(email) + '&password=' + encodeURI(password);
 
     $.ajax(loginUrl).then(function(response){
-      localStorage.setItem('token', response.sessionToken);
-      // Backbone.history.navigate('', {tigger: true});
+      self.set(response)
+      self.set('password', '')
+      localStorage.setItem('user', JSON.stringify(self.toJSON()));
+      // Backbone.history.navigate('', {trigger: true});
     })
   },
   signUp: function(){
@@ -26,6 +28,7 @@ var User = Backbone.Model.extend({
     var password = this.get('password');
 
     this.save().then(function(data){
+      self.set('password', '')
       localStorage.setItem('user', JSON.stringify(self.toJSON()));
     });
   }
