@@ -1,5 +1,6 @@
 var $ = window.jQuery = window.$ = require('jquery');
 var Backbone = require('backbone');
+require('bootstrap-sass/assets/javascripts/bootstrap.min.js');
 
 require('./router');
 
@@ -8,4 +9,5 @@ require('./router');
 $(function(){
   //triggers router
   Backbone.history.start();
+
 });

@@ -6,11 +6,13 @@ var Backbone = require('backbone');
 var setupParse = require('./parseUtilities').setupParse;
 var LogInContainer = require('./components/login.jsx').LogInContainer;
 var CreateUserContainer = require('./components/createuser.jsx').CreateUserContainer;
+var UserProfileContainer = require('./components/userProfile.jsx').UserProfileContainer;
 
 var AppRouter = Backbone.Router.extend({
     routes: {
       '': 'login',
-      'newUser/': 'newUser'
+      'newUser/': 'newUser',
+      'userProfile': 'userProfile'
     },
 
     initialize: function(){
@@ -25,6 +27,12 @@ var AppRouter = Backbone.Router.extend({
     newUser: function(){
       ReactDOM.render(
         React.createElement(CreateUserContainer),
+        document.getElementById('app')
+      );
+    },
+    userProfile: function(){
+      ReactDOM.render(
+        React.createElement(UserProfileContainer),
         document.getElementById('app')
       );
     }
