@@ -62,7 +62,6 @@ var User = require('../models/models.js').User;
    logIn: function(email, password){
      this.state.user.set({username: email, password: password});
      this.state.user.logIn(email, password)
-     console.log(email);
    },
    render: function(){
      return (
