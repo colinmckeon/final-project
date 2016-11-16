@@ -26,6 +26,10 @@ var User = require('../models/models.js').User;
    handlePasswordInput: function(e){
      this.setState({password: e.target.value})
    },
+   toCreateUser: function(e){
+     e.preventDefault();
+     this.props.router.navigate('newUser/', {trigger: true});
+   },
    render: function(){
      return (
        <div className="col-md-8 col-md-offset-2">
@@ -43,7 +47,7 @@ var User = require('../models/models.js').User;
                <div className="login-button-holder">
                   <button id="login-button" className="btn" type="submit">Log In <i className="fa fa-gamepad" aria-hidden="true"></i></button>
                   <span id="or-span">First Time Visiting QueueUp? <i className="fa fa-arrow-right" aria-hidden="true"></i></span>
-                  <button id="create-newuser-button" className="btn" type="submit">Create New Account</button>
+                  <button onClick={this.toCreateUser} id="create-newuser-button" className="btn" type="submit">Create New Account</button>
                 </div>
              </form>
         </div>
@@ -68,7 +72,7 @@ var User = require('../models/models.js').User;
        <div className="container">
          <div className="row">
 
-           <LogIn logIn={this.logIn} />
+           <LogIn logIn={this.logIn} router={this.props.router}/>
 
          </div>
        </div>

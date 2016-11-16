@@ -18,7 +18,7 @@ var AppRouter = Backbone.Router.extend({
     },
     login: function(){
       ReactDOM.render(
-        React.createElement(LogInContainer),
+        React.createElement(LogInContainer, {router:this}),
         document.getElementById('app')
       );
     },
