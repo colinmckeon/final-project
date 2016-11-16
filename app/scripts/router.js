@@ -12,7 +12,7 @@ var AppRouter = Backbone.Router.extend({
     routes: {
       '': 'login',
       'newUser/': 'newUser',
-      'userProfile': 'userProfile'
+      'userProfile/': 'userProfile'
     },
 
     initialize: function(){
@@ -26,7 +26,7 @@ var AppRouter = Backbone.Router.extend({
     },
     newUser: function(){
       ReactDOM.render(
-        React.createElement(CreateUserContainer),
+        React.createElement(CreateUserContainer, {router:this}),
         document.getElementById('app')
       );
     },

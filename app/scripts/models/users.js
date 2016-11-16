@@ -11,25 +11,25 @@ var User = Backbone.Model.extend({
   parse: function(data){
     return data.results;
   },
-  logIn: function(email, password){
+  logIn: function(email, password, router){
     var self = this;
     var loginUrl = 'https://colinmck14.herokuapp.com/' + 'login?username=' + encodeURI(email) + '&password=' + encodeURI(password);
 
     $.ajax(loginUrl).then(function(response){
       self.set(response)
+      console.log(response);
       self.set('password', '')
       localStorage.setItem('user', JSON.stringify(self.toJSON()));
-      // Backbone.history.navigate('', {trigger: true});
+      router.navigate('userProfile/', {trigger: true});
     })
   },
-  signUp: function(){
+  signUp: function(router){
     var self = this;
-    var email = this.get('email');
-    var password = this.get('password');
 
     this.save().then(function(data){
       self.set('password', '')
       localStorage.setItem('user', JSON.stringify(self.toJSON()));
+      router.navigate('', {trigger: true});
     });
   }
 });

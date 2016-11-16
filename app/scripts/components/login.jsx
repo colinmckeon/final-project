@@ -16,9 +16,10 @@ var User = require('../models/users.js').User;
 
      var email = this.state.email;
      var password = this.state.password;
+     var router = this.props.router;
 
 
-     this.props.logIn(email, password);
+     this.props.logIn(email, password, router);
    },
    handleEmailInput: function(e){
      this.setState({email: e.target.value})
@@ -63,9 +64,9 @@ var User = require('../models/users.js').User;
        user: new User()
      }
    },
-   logIn: function(email, password){
+   logIn: function(email, password, router){
      this.state.user.set({username: email, password: password});
-     this.state.user.logIn(email, password)
+     this.state.user.logIn(email, password, router)
    },
    render: function(){
      return (

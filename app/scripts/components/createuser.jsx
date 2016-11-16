@@ -19,8 +19,9 @@ var CreateUser = React.createClass({
     var email = this.state.email;
     var password = this.state.password;
     var gamertag = this.state.gamertag;
+    var router = this.props.router;
 
-    this.props.signUp(qusername, email, password, gamertag);
+    this.props.signUp(qusername, email, password, gamertag, router);
   },
   handleQusernameInput: function(e){
     this.setState({qusername: e.target.value})
@@ -74,16 +75,16 @@ var CreateUserContainer = React.createClass({
       user: new User()
     }
   },
-  signUp: function(qusername, email, password, gamertag){
-    this.state.user.set({qusername: qusername, username: email, password: password, gamertag: gamertag});
-    this.state.user.signUp()
+  signUp: function(qusername, email, password, gamertag, router){
+    this.state.user.set({qusername: qusername, username: email, password: password, gamertag: gamertag, email: email});
+    this.state.user.signUp(router)
   },
   render: function(){
     return(
       <div className="container">
         <div className="row">
 
-          <CreateUser signUp={this.signUp} />
+          <CreateUser signUp={this.signUp} router={this.props.router}/>
 
         </div>
       </div>
