@@ -25,8 +25,7 @@ var NavBar = React.createClass({
               <li className="dropdown">
                 <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Squads <span className="caret"></span></a>
                 <ul className="dropdown-menu">
-                  <li><a href="#">Find Squad</a></li>
-                  <li><a href="#createSquad/">Create Squad</a></li>
+                  <li><a href="#createSquad/">Find / Create Squad</a></li>
                   <li role="separator" className="divider"></li>
                   <li><a href="#">My Squads</a></li>
                 </ul>
