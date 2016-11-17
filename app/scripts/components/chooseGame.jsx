@@ -11,17 +11,18 @@ var Game = React.createClass({
 
     var gameHtml = this.props.gameList.map(function(item, index){
       return (
-        <div className="gameCover-holder" key={item.id + index}>
-          <li><h6>{item.name}</h6></li>
-
+        <div className="col-md-3" key={item.id + index}>
+          <a href="#createSquad/">
+            <div className="gameCover-holder">
+              <h6>{item.name}</h6>
+            </div>
+          </a>
         </div>
       );
     });
       return(
         <div>
-          <ul>
             {gameHtml}
-          </ul>
         </div>
       )
   }
@@ -35,10 +36,18 @@ var ChooseGameContainer = React.createClass({
   },
   render: function(){
     return (
-      <div>
-        <Template />
-        <Game gameList={this.state.game} />
-      </div>
+
+        <Template>
+          <div className="container">
+            <div className="row">
+
+                <Game gameList={this.state.game} />
+
+            </div>
+          </div>
+        </Template>
+
+
     );
   }
 });

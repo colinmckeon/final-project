@@ -9,6 +9,7 @@ var CreateSquadContainer = React.createClass({
     return (
       <div>
         <Template />
+        <h1 id="example">CREATE SQUAD SCREEN</h1>
       </div>
     );
   }
