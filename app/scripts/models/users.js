@@ -20,7 +20,7 @@ var User = Backbone.Model.extend({
       console.log(response);
       self.set('password', '')
       localStorage.setItem('user', JSON.stringify(self.toJSON()));
-      router.navigate('userProfile/', {trigger: true});
+      router.navigate('chooseGame/', {trigger: true});
     })
   },
   signUp: function(router){

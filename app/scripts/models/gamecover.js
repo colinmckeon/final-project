@@ -1,6 +1,11 @@
 var Backbone = require('backbone');
 
 
+var GameCoverArt = Backbone.Model.extend({
+
+});
+
+
 // $.ajaxSetup({
 //   beforeSend: function(xhr){
 //     console.log('beforeSend mash');
@@ -10,3 +15,8 @@ var Backbone = require('backbone');
 // });
 // $.get('https://igdbcom-internet-game-database-v1.p.mashape.com/games/?fields=name%2Ccover').then(function(data){
 // console.log(data);
+
+// 
+// module.exports = {
+//
+// }

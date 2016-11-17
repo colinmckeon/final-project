@@ -3,6 +3,9 @@ var React = require('react');
 
 
 var NavBar = React.createClass({
+  handleLogOut: function(){
+    localStorage.clear();
+  },
   render: function(){
     return (
       <nav className="navbar navbar-default">
@@ -23,7 +26,7 @@ var NavBar = React.createClass({
                 <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Squads <span className="caret"></span></a>
                 <ul className="dropdown-menu">
                   <li><a href="#">Find Squad</a></li>
-                  <li><a href="#">Create Squad</a></li>
+                  <li><a href="#createSquad/">Create Squad</a></li>
                   <li role="separator" className="divider"></li>
                   <li><a href="#">My Squads</a></li>
                 </ul>
@@ -34,12 +37,12 @@ var NavBar = React.createClass({
               <li className="dropdown">
                 <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Profile <span className="caret"></span></a>
                 <ul className="dropdown-menu">
-                  <li><a href="#">Go To</a></li>
+                  <li><a href="#userProfile/">Go To</a></li>
                   <li role="separator" className="divider"></li>
                   <li><a href="#">Settings</a></li>
                 </ul>
               </li>
-              <li><a href="#">Log Out</a></li>
+              <li><a onClick={this.handleLogOut} href="#">Log Out</a></li>
             </ul>
           </div>
         </div>

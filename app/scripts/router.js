@@ -6,13 +6,17 @@ var Backbone = require('backbone');
 var setupParse = require('./parseUtilities').setupParse;
 var LogInContainer = require('./components/login.jsx').LogInContainer;
 var CreateUserContainer = require('./components/createuser.jsx').CreateUserContainer;
+var ChooseGameContainer = require('./components/chooseGame.jsx').ChooseGameContainer;
 var UserProfileContainer = require('./components/userProfile.jsx').UserProfileContainer;
+var CreateSquadContainer = require('./components/createSquad.jsx').CreateSquadContainer;
 
 var AppRouter = Backbone.Router.extend({
     routes: {
       '': 'login',
       'newUser/': 'newUser',
-      'userProfile/': 'userProfile'
+      'chooseGame/': 'chooseGame',
+      'userProfile/': 'userProfile',
+      'createSquad/': 'createSquad'
     },
 
     initialize: function(){
@@ -30,9 +34,21 @@ var AppRouter = Backbone.Router.extend({
         document.getElementById('app')
       );
     },
+    chooseGame: function(){
+      ReactDOM.render(
+        React.createElement(ChooseGameContainer),
+        document.getElementById('app')
+      );
+    },
     userProfile: function(){
       ReactDOM.render(
         React.createElement(UserProfileContainer),
+        document.getElementById('app')
+      );
+    },
+    createSquad: function(){
+      ReactDOM.render(
+        React.createElement(CreateSquadContainer),
         document.getElementById('app')
       );
     }
