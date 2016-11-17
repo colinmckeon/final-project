@@ -19,8 +19,15 @@ var NavBar = React.createClass({
 
           <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul className="nav navbar-nav">
-              <li><a href="#">Find Squad</a></li>
-              <li><a href="#">My Squads</a></li>
+              <li className="dropdown">
+                <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Squads <span className="caret"></span></a>
+                <ul className="dropdown-menu">
+                  <li><a href="#">Find Squad</a></li>
+                  <li><a href="#">Create Squad</a></li>
+                  <li role="separator" className="divider"></li>
+                  <li><a href="#">My Squads</a></li>
+                </ul>
+              </li>
             </ul>
 
             <ul className="nav navbar-nav navbar-right">

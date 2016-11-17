@@ -3,13 +3,22 @@ var Backbone = require('backbone');
 
 var Template = require('./templates.jsx').Template;
 
-
+var ImageUpload = React.createClass({
+  render: function(){
+    return (
+      <div>
+        <h1 id="example">USER PROFILE</h1>
+      </div>
+    );
+  }
+});
 
 var UserProfileContainer = React.createClass({
   render: function(){
     return (
       <div>
         <Template />
+        <ImageUpload />
       </div>
     );
   }
