@@ -7,10 +7,20 @@ var Modal = require('react-modal');
 var Template = require('./templates.jsx').Template;
 var gameCovers = require('../dummyData.js').gameCovers;
 
+var GameCoverArtCollection = require('../models/gameCover.js').GameCoverArtCollection;
+
 
 var Game = React.createClass({
   getInitialState: function(){
-   return { modalIsOpen: false };
+   return {
+     modalIsOpen: false,
+     collection: new GameCoverArtCollection()
+    };
+  },
+  componentWillMount: function(){
+    this.state.collection.fetch().then(function(response){
+      console.log(response);
+    })
   },
  openModal: function(){
    this.setState({modalIsOpen: true});
