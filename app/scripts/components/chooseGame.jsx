@@ -30,7 +30,7 @@ var Game = React.createClass({
           allGames.push(game)
         });
 
-        $.get('https://igdbcom-internet-game-database-v1.p.mashape.com/games/?fields=name%2Ccover&search=dota:desc:min&limit=50')
+        $.get('https://igdbcom-internet-game-database-v1.p.mashape.com/games/?fields=name%2Ccover&search=dota,rocketleague,worldofwarcraft,hearthstone:desc:min&limit=50')
           .then(function(data) {
             console.log('2nd fetch', data);
             data.forEach(function(game){
