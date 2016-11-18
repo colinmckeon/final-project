@@ -7,20 +7,41 @@ var Modal = require('react-modal');
 var Template = require('./templates.jsx').Template;
 var gameCovers = require('../dummyData.js').gameCovers;
 
-var GameCoverArtCollection = require('../models/gameCover.js').GameCoverArtCollection;
+// var GameCoverArtCollectionA = require('../models/gameCover.js').GameCoverArtCollectionA;
 
 
 var Game = React.createClass({
   getInitialState: function(){
+
    return {
      modalIsOpen: false,
-     collection: new GameCoverArtCollection()
+      collection: []
     };
   },
   componentWillMount: function(){
-    this.state.collection.fetch().then(function(response){
-      console.log(response);
-    })
+    var self = this;
+    var allGames = []; // array to hold all the games
+
+    $.get('https://igdbcom-internet-game-database-v1.p.mashape.com/games/?fields=name%2Ccover&search=overwatch,diablo,minecraft,smite:desc:min&limit=50')
+      .then(function(data){
+        //console.log(data);
+        // self.setState({collection: data})
+        data.forEach(function(game){
+          allGames.push(game)
+        });
+
+        $.get('https://igdbcom-internet-game-database-v1.p.mashape.com/games/?fields=name%2Ccover&search=dota:desc:min&limit=50')
+          .then(function(data) {
+            console.log('2nd fetch', data);
+            data.forEach(function(game){
+              allGames.push(game)
+            });
+            // self.collection.push(data)
+            self.setState({collection: allGames});
+          });
+
+    });
+
   },
  openModal: function(){
    this.setState({modalIsOpen: true});
@@ -29,6 +50,7 @@ var Game = React.createClass({
     this.setState({modalIsOpen: false});
   },
   render: function(){
+    console.log('state collection', this.state.collection);
     var self = this;
     var gameHtml = this.props.gameList.map(function(item, index){
       return (
