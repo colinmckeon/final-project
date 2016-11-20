@@ -49,6 +49,10 @@ var Game = React.createClass({
  closeModal: function(){
     this.setState({modalIsOpen: false});
   },
+  toCreateSquad: function(e){
+    e.preventDefault();
+    this.props.router.navigate('createSquad/', {trigger: true});
+  },
   render: function(){
     console.log('state collection', this.state.collection);
     var self = this;
@@ -72,7 +76,7 @@ var Game = React.createClass({
             <br/>
 
             <div>
-              <button type="button" className="btn btn-lg btn-block createSquadButton">Create a QueueSquad</button>
+              <button onClick={this.toCreateSquad} type="button" className="btn btn-lg btn-block createSquadButton">Create a QueueSquad</button>
             </div>
 
             <br/>
@@ -104,7 +108,7 @@ var ChooseGameContainer = React.createClass({
           <div className="container">
             <div className="row">
 
-                <Game gameList={this.state.game} />
+                <Game gameList={this.state.game} router={this.props.router}/>
 
             </div>
           </div>

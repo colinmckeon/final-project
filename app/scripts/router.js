@@ -36,7 +36,7 @@ var AppRouter = Backbone.Router.extend({
     },
     chooseGame: function(){
       ReactDOM.render(
-        React.createElement(ChooseGameContainer),
+        React.createElement(ChooseGameContainer, {router:this}),
         document.getElementById('app')
       );
     },
