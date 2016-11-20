@@ -49,6 +49,10 @@ var Game = React.createClass({
  closeModal: function(){
     this.setState({modalIsOpen: false});
   },
+  toFindSquad: function(e){
+    e.preventDefault();
+    this.props.router.navigate('findSquad/', {trigger: true});
+  },
   toCreateSquad: function(e){
     e.preventDefault();
     this.props.router.navigate('createSquad/', {trigger: true});
@@ -76,7 +80,7 @@ var Game = React.createClass({
             <br/>
 
             <div>
-              <button onClick={this.toCreateSquad} type="button" className="btn btn-lg btn-block createSquadButton">Create a QueueSquad</button>
+              <button onClick={this.toFindSquad} type="button" className="btn btn-lg btn-block findSquadButton">Find a QueueSquad</button>
             </div>
 
             <br/>
@@ -85,9 +89,9 @@ var Game = React.createClass({
             </div>
             <br/>
 
-            <div>
-              <button type="button" className="btn btn-lg btn-block findSquadButton">Find a QueueSquad</button>
-            </div>
+              <div>
+                <button onClick={this.toCreateSquad} type="button" className="btn btn-lg btn-block createSquadButton">Create a QueueSquad</button>
+              </div>
           </Modal>
             {gameHtml}
         </div>
