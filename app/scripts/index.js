@@ -6,12 +6,12 @@ require('./router');
 
 
 
-$.ajaxSetup({
-  beforeSend: function(xhr){
-    xhr.setRequestHeader("X-Mashape-Key", "64ygDWoKx7mshue5RJgLaVom1n5lp12Bzfejsnkr3S0j0ATb5P");
-    xhr.setRequestHeader("Accept", "application/json");
-  }
-});
+// $.ajaxSetup({
+//   beforeSend: function(xhr){
+//     xhr.setRequestHeader("X-Mashape-Key", "64ygDWoKx7mshue5RJgLaVom1n5lp12Bzfejsnkr3S0j0ATb5P");
+//     xhr.setRequestHeader("Accept", "application/json");
+//   }
+// });
 
 
 

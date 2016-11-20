@@ -66,7 +66,24 @@ var Game = React.createClass({
       return(
         <div>
           <Modal isOpen={this.state.modalIsOpen}>
-            <button onClick={this.closeModal}>close</button>
+            <div>
+              <button onClick={this.closeModal}> <i className="fa fa-times" aria-hidden="true"></i> </button>
+            </div>
+            <br/>
+
+            <div>
+              <button type="button" className="btn btn-lg btn-block createSquadButton">Create a QueueSquad</button>
+            </div>
+
+            <br/>
+            <div className="modal-or">
+              <span>OR</span>
+            </div>
+            <br/>
+
+            <div>
+              <button type="button" className="btn btn-lg btn-block findSquadButton">Find a QueueSquad</button>
+            </div>
           </Modal>
             {gameHtml}
         </div>
