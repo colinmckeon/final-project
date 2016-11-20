@@ -10,6 +10,9 @@ var ChooseGameContainer = require('./components/chooseGame.jsx').ChooseGameConta
 var UserProfileContainer = require('./components/userProfile.jsx').UserProfileContainer;
 var CreateSquadContainer = require('./components/createSquad.jsx').CreateSquadContainer;
 var FindSquadContainer = require('./components/findSquad.jsx').FindSquadContainer;
+var MyCurrentSquadContainer = require('./components/myCurrentSquad.jsx').MyCurrentSquadContainer;
+var ProfileSettingsContainer = require('./components/profileSettings.jsx').ProfileSettingsContainer;
+
 
 var AppRouter = Backbone.Router.extend({
     routes: {
@@ -17,8 +20,10 @@ var AppRouter = Backbone.Router.extend({
       'newUser/': 'newUser',
       'chooseGame/': 'chooseGame',
       'userProfile/': 'userProfile',
+      'profileSettings/': 'profileSettings',
       'createSquad/': 'createSquad',
-      'findSquad/': 'findSquad'
+      'findSquad/': 'findSquad',
+      'myCurrentSquad/': 'myCurrentSquad'
     },
 
     initialize: function(){
@@ -45,6 +50,18 @@ var AppRouter = Backbone.Router.extend({
     userProfile: function(){
       ReactDOM.render(
         React.createElement(UserProfileContainer),
+        document.getElementById('app')
+      );
+    },
+    profileSettings: function(){
+      ReactDOM.render(
+        React.createElement(ProfileSettingsContainer),
+        document.getElementById('app')
+      );
+    },
+    myCurrentSquad: function(){
+      ReactDOM.render(
+        React.createElement(MyCurrentSquadContainer),
         document.getElementById('app')
       );
     },

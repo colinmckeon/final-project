@@ -7,7 +7,7 @@ var Template = require('./templates.jsx').Template;
 var CreateSquad = React.createClass({
   render: function(){
     return (
-
+      <h1 id="example">CREATE SQUAD SCREEN</h1>
     );
   }
 });
@@ -17,7 +17,7 @@ var CreateSquadContainer = React.createClass({
     return (
       <div>
         <Template />
-        <h1 id="example">CREATE SQUAD SCREEN</h1>
+        <createSquad />
       </div>
     );
   }

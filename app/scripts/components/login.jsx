@@ -47,7 +47,7 @@ var User = require('../models/users.js').User;
                </div>
                <div className="login-button-holder">
                   <button id="login-button" className="btn" type="submit">Log In <i className="fa fa-gamepad" aria-hidden="true"></i></button>
-                  <span id="or-span">First Time Visiting QueueUp? <i className="fa fa-arrow-right" aria-hidden="true"></i></span>
+                  <span id="or-span">First Time Visiting QueueUp? <i className="fa fa-hand-o-right" aria-hidden="true"></i></span>
                   <button onClick={this.toCreateUser} id="create-newuser-button" className="btn" type="submit">Create New Account</button>
                 </div>
              </form>

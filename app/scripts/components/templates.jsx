@@ -23,25 +23,25 @@ var NavBar = React.createClass({
           <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul className="nav navbar-nav">
               <li className="dropdown">
-                <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Squads <span className="caret"></span></a>
+                <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Squads <i className="fa fa-users" aria-hidden="true"></i><span className="caret"></span></a>
                 <ul className="dropdown-menu">
-                  <li><a href="#chooseGame/">Find / Create Squad</a></li>
+                  <li><a href="#chooseGame/">Find / Create Squad </a></li>
                   <li role="separator" className="divider"></li>
-                  <li><a href="#">My Current Squad</a></li>
+                  <li><a href="#myCurrentSquad/">My Current Squad</a></li>
                 </ul>
               </li>
             </ul>
 
             <ul className="nav navbar-nav navbar-right">
               <li className="dropdown">
-                <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Profile <span className="caret"></span></a>
+                <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Profile <i className="fa fa-user" aria-hidden="true"></i><span className="caret"></span></a>
                 <ul className="dropdown-menu">
                   <li><a href="#userProfile/">Go To</a></li>
                   <li role="separator" className="divider"></li>
-                  <li><a href="#">Settings</a></li>
+                  <li><a href="#profileSettings/">Settings <i className="fa fa-wrench" aria-hidden="true"></i></a></li>
                 </ul>
               </li>
-              <li><a onClick={this.handleLogOut} href="#">Log Out</a></li>
+              <li><a onClick={this.handleLogOut} href="#">Log Out <i className="fa fa-sign-out" aria-hidden="true"></i></a></li>
             </ul>
           </div>
         </div>
