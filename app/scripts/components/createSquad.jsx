@@ -5,6 +5,21 @@ var Template = require('./templates.jsx').Template;
 
 
 var CreateSquad = React.createClass({
+  getInitialState: function(){
+    return {
+      players: '',
+      message: ''
+    };
+  },
+  handleCreateSquad: function(){
+
+  },
+  handlePlayersNeeded: function(){
+
+  },
+  handleCreatorMessage: function(){
+
+  },
   render: function(){
     return (
       <div className="col-md-8 col-md-offset-2">
@@ -16,16 +31,16 @@ var CreateSquad = React.createClass({
           <br />
           <br />
 
-          <form>
+          <form onSubmit={this.handleCreateSquad}>
             <div>
               <label forHTML="playersNeeded">Players Needed for Squad: &nbsp; </label>
-              <input id="playersNeeded" type="number" min="1" max="40" placeholder="minimum of 1"></input>
+              <input onChange={this.handlePlayersNeeded} value={this.state.players} id="playersNeeded" type="number" min="1" max="40" placeholder="minimum of 1"></input>
             </div>
             <br />
 
             <div>
               <label forHTML="creatorMessage">Your Message to the Squad:</label>
-              <textarea id="creatorMessage" placeholder="E.g. I am looking to find a squad of competitive players who's skill level is 'blank'. Everyone needs mic, and no arguing is allowed.  Looking for players attempting to accomplish 'blank'.  Trying to start a queue in at most, 15 minutes. Let's pwn some noobs!!!!"></textarea>
+              <textarea onChange={this.handleCreatorMessage} value={this.state.message} id="creatorMessage" placeholder="E.g. I am looking to find a squad of competitive players who's skill level is 'blank'. Everyone needs mic, and no arguing is allowed.  Looking for players attempting to accomplish 'blank'.  Trying to start a queue in at most, 15 minutes. Let's pwn some noobs!!!!"></textarea>
             </div>
             <br />
 
