@@ -73,7 +73,7 @@ var AppRouter = Backbone.Router.extend({
     },
     findSquad: function(){
       ReactDOM.render(
-        React.createElement(FindSquadContainer),
+        React.createElement(FindSquadContainer, {router:this}),
         document.getElementById('app')
       );
     }
