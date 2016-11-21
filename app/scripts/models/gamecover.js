@@ -14,11 +14,6 @@ var GameCollection = Backbone.Collection.extend({
 
 
 
-// // $.get('https://igdbcom-internet-game-database-v1.p.mashape.com/games/?fields=name%2Ccover&search=overwatch,diablo,minecraft,smite:desc:min&limit=50').then(function(data){
-// // console.log(data);
-
-
-
 module.exports = {
   Game: Game,
   GameCollection: GameCollection

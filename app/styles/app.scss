@@ -76,6 +76,11 @@ label{
   font-weight: bold;
   font-size: 16px;
 }
+#goBackButton{
+  float: right;
+  background-color: #262831;
+  color: #00AC1C;
+}
 //
 //END CREATE USER STYLE
 //
@@ -87,7 +92,13 @@ label{
 //
 //BEGINNING CHOOSE GAME SCREEN
 //
-
+#chooseGameScreenTitle{
+  color: #00AC1C;
+  text-align: center;
+}
+.chooseGameTitle{
+  color: #00AC1C;
+}
 //
 //END CHOOSE GAME SCREEN
 //

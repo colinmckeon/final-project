@@ -34,13 +34,15 @@ var Game = React.createClass({
     var self = this;
     var gameHtml = this.props.gameList.map(function(item, index){
       return (
-
+        <div>
+          <h1 id="chooseGameScreenTitle">Find or Create a Squad to "QueueUp"</h1>
           <div className="col-md-3" key={item.get('objectId') + index}>
               <div onClick={self.openModal} className="gameCover-holder">
-                <h6>{item.get('name')}</h6>
+                <h5 className="chooseGameTitle">{item.get('name')}</h5>
                 <img src={item.get('coverArt')} />
               </div>
           </div>
+        </div>
 
       );
     });

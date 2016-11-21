@@ -5,7 +5,7 @@ var Backbone = require('backbone');
 //Local require
 var setupParse = require('./parseUtilities').setupParse;
 var LogInContainer = require('./components/login.jsx').LogInContainer;
-var CreateUserContainer = require('./components/createuser.jsx').CreateUserContainer;
+var CreateUserContainer = require('./components/createUser.jsx').CreateUserContainer;
 var ChooseGameContainer = require('./components/chooseGame.jsx').ChooseGameContainer;
 var UserProfileContainer = require('./components/userProfile.jsx').UserProfileContainer;
 var CreateSquadContainer = require('./components/createSquad.jsx').CreateSquadContainer;

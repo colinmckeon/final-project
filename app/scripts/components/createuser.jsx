@@ -35,6 +35,10 @@ var CreateUser = React.createClass({
   handleGamertagInput: function(e){
     this.setState({gamertag: e.target.value})
   },
+  toLogIn: function(e){
+    e.preventDefault();
+    this.props.router.navigate('#', {trigger: true});
+  },
   render: function(){
     return(
       <div className="col-md-8 col-md-offset-2">
@@ -62,6 +66,7 @@ var CreateUser = React.createClass({
           </div>
 
           <button className="btn create-account-btn" type="submit">CreateAccount <i className="fa fa-gamepad" aria-hidden="true"></i></button>
+          <button onClick={this.toLogIn} id="goBackButton" className="btn">Go Back</button>
         </form>
       </div>
     )
