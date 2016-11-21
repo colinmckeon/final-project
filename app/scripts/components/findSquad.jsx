@@ -3,13 +3,37 @@ var Backbone = require('backbone');
 
 var Template = require('./templates.jsx').Template;
 
-var FindSquadContainer = React.createClass({
+
+var FindSquad = React.createClass({
   render: function(){
     return (
       <div>
-        <Template />
-        <h1 id="example">FIND SQUAD SCREEN</h1>
+        <h1 id="findSquadTitle">JOIN A SQUAD</h1>
+        <div className="col-md-6 well">
+
+        </div>
       </div>
+    );
+  }
+});
+
+
+var FindSquadContainer = React.createClass({
+  get
+  render: function(){
+    return (
+
+        <Template>
+          <div className="container">
+            <div className="row">
+
+              <FindSquad />
+            </div>
+
+          </div>
+        </Template>
+
+
     );
   }
 });
