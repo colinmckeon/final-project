@@ -2,6 +2,7 @@ var React = require('react');
 var Backbone = require('backbone');
 
 var Template = require('./templates.jsx').Template;
+var CreateSquadCollection = require('../models/squads.js').CreateSquadCollection;
 
 
 var CreateSquad = React.createClass({
@@ -11,14 +12,21 @@ var CreateSquad = React.createClass({
       message: ''
     };
   },
-  handleCreateSquad: function(){
+  handleCreateSquad: function(e){
+    e.preventDefault();
+
+    var players = this.state.players;
+    var message = this.state.message;
+
+    var collection = this.props.collection;
+    collection.create(this.state);
 
   },
-  handlePlayersNeeded: function(){
-
+  handlePlayersNeeded: function(e){
+    this.setState({players: e.target.value})
   },
-  handleCreatorMessage: function(){
-
+  handleCreatorMessage: function(e){
+    this.setState({message: e.target.value})
   },
   render: function(){
     return (
@@ -54,13 +62,18 @@ var CreateSquad = React.createClass({
 });
 
 var CreateSquadContainer = React.createClass({
+  getInitialState: function(){
+    return {
+      collection: new CreateSquadCollection()
+    }
+  },
   render: function(){
     return (
 
         <Template>
           <div className="container">
             <div className="row">
-              <CreateSquad />
+              <CreateSquad collection={this.state.collection}/>
             </div>
           </div>
         </Template>
