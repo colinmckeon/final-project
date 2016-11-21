@@ -7,41 +7,14 @@ var Modal = require('react-modal');
 var Template = require('./templates.jsx').Template;
 var gameCovers = require('../dummyData.js').gameCovers;
 
-// var GameCoverArtCollectionA = require('../models/gameCover.js').GameCoverArtCollectionA;
+var GameCollection = require('../models/gameCover.js').GameCollection;
 
 
 var Game = React.createClass({
   getInitialState: function(){
-
    return {
      modalIsOpen: false,
-      collection: []
     };
-  },
-  componentWillMount: function(){
-    var self = this;
-    var allGames = []; // array to hold all the games
-
-    $.get('https://igdbcom-internet-game-database-v1.p.mashape.com/games/?fields=name%2Ccover&search=overwatch,diablo,minecraft,smite:desc:min&limit=50')
-      .then(function(data){
-        //console.log(data);
-        // self.setState({collection: data})
-        data.forEach(function(game){
-          allGames.push(game)
-        });
-
-        $.get('https://igdbcom-internet-game-database-v1.p.mashape.com/games/?fields=name%2Ccover&search=dota,rocketleague,worldofwarcraft,hearthstone:desc:min&limit=50')
-          .then(function(data) {
-            console.log('2nd fetch', data);
-            data.forEach(function(game){
-              allGames.push(game)
-            });
-            // self.collection.push(data)
-            self.setState({collection: allGames});
-          });
-
-    });
-
   },
  openModal: function(){
    this.setState({modalIsOpen: true});
@@ -58,14 +31,14 @@ var Game = React.createClass({
     this.props.router.navigate('createSquad/', {trigger: true});
   },
   render: function(){
-    console.log('state collection', this.state.collection);
     var self = this;
     var gameHtml = this.props.gameList.map(function(item, index){
       return (
 
-          <div className="col-md-3" key={item.id + index}>
+          <div className="col-md-3" key={item.get('objectId') + index}>
               <div onClick={self.openModal} className="gameCover-holder">
-                <h6>{item.name}</h6>
+                <h6>{item.get('name')}</h6>
+                <img src={item.get('coverArt')} />
               </div>
           </div>
 
@@ -101,9 +74,19 @@ var Game = React.createClass({
 
 var ChooseGameContainer = React.createClass({
   getInitialState: function(){
-    return {
-      game: gameCovers
-    }
+
+   return {
+    modalIsOpen: false,
+    collection: new GameCollection()
+    };
+  },
+  componentWillMount: function(){
+    var self = this;
+    var gameCollection = this.state.collection;
+
+    gameCollection.fetch().then(function(){
+      self.setState({collection: gameCollection});
+    });
   },
   render: function(){
     return (
@@ -112,7 +95,7 @@ var ChooseGameContainer = React.createClass({
           <div className="container">
             <div className="row">
 
-                <Game gameList={this.state.game} router={this.props.router}/>
+                <Game gameList={this.state.collection} router={this.props.router}/>
 
             </div>
           </div>
