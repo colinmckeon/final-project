@@ -10,21 +10,24 @@ var FindSquad = React.createClass({
     var squadList = this.props.squadListing.map(function(squad){
       console.log(squad);
       return (
-        <div key={squad.objectId}>
-          <h1>{squad.players}</h1>
-          <p>{squad.message}</p>
+        <div className="col-md-6" key={squad.objectId}>
+          <div className="well">
+            
+            <h4>Players Needed: {squad.players}</h4>
+            <p>{squad.message}</p>
 
-          <div>
-          <button className="btn joinSquadButton" type="submit">Join Squad <i className="fa fa-gamepad" aria-hidden="true"></i></button>
+            <div>
+            <button className="btn joinSquadButton" type="submit">Join Squad <i className="fa fa-gamepad" aria-hidden="true"></i></button>
+            </div>
+
           </div>
-
         </div>
       )
     });
     return (
       <div>
         <h1 id="findSquadTitle">JOIN A SQUAD</h1>
-        <div className="col-md-6 well">
+        <div>
           {squadList}
         </div>
       </div>

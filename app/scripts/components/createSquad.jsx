@@ -18,8 +18,11 @@ var CreateSquad = React.createClass({
     var players = this.state.players;
     var message = this.state.message;
 
+
     var collection = this.props.collection;
     collection.create(this.state);
+
+    this.props.router.navigate('myCurrentSquad/', {trigger: true});
 
   },
   handlePlayersNeeded: function(e){
@@ -48,7 +51,7 @@ var CreateSquad = React.createClass({
 
             <div>
               <label forHTML="creatorMessage">Your Message to the Squad:</label>
-              <textarea onChange={this.handleCreatorMessage} value={this.state.message} id="creatorMessage" placeholder="E.g. I am looking to find a squad of competitive players who's skill level is 'blank'. Everyone needs mic, and no arguing is allowed.  Looking for players attempting to accomplish 'blank'.  Trying to start a queue in at most, 15 minutes. Let's pwn some noobs!!!!"></textarea>
+              <textarea onChange={this.handleCreatorMessage} value={this.state.message} id="creatorMessage" placeholder="E.g. I am playing on e.g. (PC, XBOX, Playstation) I am looking to find a squad of competitive players who's skill level is 'blank'. Everyone needs mic, and no arguing is allowed.  Looking for players attempting to accomplish 'blank'.  Trying to start a queue in at most, 15 minutes. Let's pwn some noobs!!!!"></textarea>
             </div>
             <br />
 
@@ -73,7 +76,7 @@ var CreateSquadContainer = React.createClass({
         <Template>
           <div className="container">
             <div className="row">
-              <CreateSquad collection={this.state.collection}/>
+              <CreateSquad collection={this.state.collection} router={this.props.router}/>
             </div>
           </div>
         </Template>
