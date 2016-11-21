@@ -7,7 +7,28 @@ var Template = require('./templates.jsx').Template;
 var CreateSquad = React.createClass({
   render: function(){
     return (
-      <h1 id="example">CREATE SQUAD SCREEN</h1>
+      <div className="col-md-8 col-md-offset-2">
+        <div className="createSquadHolder">
+
+          <div className="createSquadTitleHolder">
+            <h1 id="createSquadTitle">CREATE A SQUAD</h1>
+          </div>
+
+          <form>
+            <div>
+              <label forHTML="playersNeeded">Players Needed for Squad: &nbsp; </label>
+              <input id="playersNeeded" type="number" min="1" max="40" placeholder="minimum of 1"></input>
+            </div>
+
+            <div>
+              <label forHTML="creatorMessage">Message</label>
+              <textarea id="creatorMessage"></textarea>
+            </div>
+
+          </form>
+
+        </div>
+      </div>
     );
   }
 });
@@ -15,10 +36,15 @@ var CreateSquad = React.createClass({
 var CreateSquadContainer = React.createClass({
   render: function(){
     return (
-      <div>
-        <Template />
-        <createSquad />
-      </div>
+
+        <Template>
+          <div className="container">
+            <div className="row">
+              <CreateSquad />
+            </div>
+          </div>
+        </Template>
+
     );
   }
 });
