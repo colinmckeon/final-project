@@ -5766,4 +5766,93 @@ button.close {
 img {
   max-width: 100%; }
 
+body {
+  background-color: #262831; }
+
+h2 {
+  color: #00AC1C; }
+
+#example {
+  color: white; }
+
+label {
+  color: #00AC1C; }
+
+.login-button-holder {
+  text-align: center; }
+
+#login-button {
+  background-color: #00AC1C;
+  font-weight: bold;
+  font-size: 16px;
+  float: left; }
+
+#or-span {
+  color: #B2B4B3;
+  font-size: 20px; }
+
+#create-newuser-button {
+  float: right;
+  background-color: #262831;
+  color: #00AC1C; }
+
+.create-account-btn {
+  background-color: #00AC1C;
+  font-weight: bold;
+  font-size: 16px; }
+
+#goBackButton {
+  float: right;
+  background-color: #262831;
+  color: #00AC1C; }
+
+#chooseGameScreenTitle {
+  color: #00AC1C;
+  text-align: center; }
+
+.chooseGameTitle {
+  color: #00AC1C; }
+
+.findSquadButton {
+  display: inline-block;
+  background-color: #262831;
+  color: #00AC1C; }
+
+.modal-or {
+  text-align: center;
+  font-weight: bold;
+  font-size: 28px; }
+
+.createSquadButton {
+  display: inline-block;
+  background-color: #00AC1C;
+  color: #262831; }
+
+.createSquadTitleHolder {
+  text-align: center; }
+
+#createSquadTitle {
+  color: #00AC1C; }
+
+#playersNeeded {
+  width: 110px; }
+
+#creatorMessage {
+  width: 100%;
+  height: 120px; }
+
+#createNewSquadButton {
+  color: #262831;
+  background-color: #00AC1C;
+  font-weight: bold; }
+
+#findSquadTitle {
+  color: #00AC1C;
+  text-align: center; }
+
+.joinSquadButton {
+  color: #262831;
+  background-color: #00AC1C;
+  font-weight: bold; }
+
 /*# sourceMappingURL=app.css.map */
