@@ -6,14 +6,12 @@ var CreateSquadCollection = require('../models/squads.js').CreateSquadCollection
 
 
 var FindSquad = React.createClass({
-  toMyCurrentSquad: function(e){
-    e.preventDefault();
-    this.props.router.navigate('myCurrentSquad/', {trigger: true});
+  toMyCurrentSquad: function(squadId){
+    this.props.router.navigate('findSquad/' + squadId + '/', {trigger: true});
   },
   render: function(){
     var self = this;
     var squadList = this.props.squadListing.map(function(squad){
-      console.log(squad);
       return (
         <div className="col-md-6" key={squad.objectId}>
           <div className="well">
@@ -22,7 +20,7 @@ var FindSquad = React.createClass({
             <p>{squad.message}</p>
 
             <div>
-            <button onClick={self.toMyCurrentSquad} className="btn joinSquadButton" type="submit">Join Squad <i className="fa fa-gamepad" aria-hidden="true"></i></button>
+            <button onClick={function(){self.toMyCurrentSquad(squad.objectId)}} className="btn joinSquadButton" type="button">Join Squad <i className="fa fa-gamepad" aria-hidden="true"></i></button>
             </div>
 
           </div>

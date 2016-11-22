@@ -5,14 +5,17 @@ var CreateSquadModel = Backbone.Model.extend({
     players: '',
     message: ''
   },
-  idAttribute: 'objectId'
+  idAttribute: 'objectId',
+  urlRoot: 'https://colinmck14.herokuapp.com/classes/Squads/'
+
 });
 
 var CreateSquadCollection = Backbone.Collection.extend({
   model: CreateSquadModel,
-  url: 'https://colinmck14.herokuapp.com/classes/Squads'
+  url: 'https://colinmck14.herokuapp.com/classes/Squads/'
 });
 
 module.exports = {
-  CreateSquadCollection: CreateSquadCollection
+  CreateSquadCollection: CreateSquadCollection,
+  CreateSquadModel: CreateSquadModel
 }

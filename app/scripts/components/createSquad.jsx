@@ -3,6 +3,7 @@ var Backbone = require('backbone');
 
 var Template = require('./templates.jsx').Template;
 var CreateSquadCollection = require('../models/squads.js').CreateSquadCollection;
+var CreateSquadModel = require('../models/squads.js').CreateSquadModel;
 
 
 var CreateSquad = React.createClass({
@@ -18,11 +19,14 @@ var CreateSquad = React.createClass({
     var players = this.state.players;
     var message = this.state.message;
 
-
     var collection = this.props.collection;
-    collection.create(this.state);
+    var self = this;
 
-    this.props.router.navigate('myCurrentSquad/', {trigger: true});
+    collection.create(this.state,{success: function(model){
+      self.props.router.navigate('findSquad/' + model.get('objectId') + '/', {trigger: true});
+
+    }});
+
 
   },
   handlePlayersNeeded: function(e){
@@ -76,7 +80,7 @@ var CreateSquadContainer = React.createClass({
         <Template>
           <div className="container">
             <div className="row">
-              <CreateSquad collection={this.state.collection} router={this.props.router}/>
+              <CreateSquad collection={this.state.collection} router={this.props.router} squadId={this.props.squadId}/>
             </div>
           </div>
         </Template>

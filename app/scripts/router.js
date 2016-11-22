@@ -22,8 +22,9 @@ var AppRouter = Backbone.Router.extend({
       'userProfile/': 'userProfile',
       'profileSettings/': 'profileSettings',
       'createSquad/': 'createSquad',
-      'findSquad/': 'findSquad',
-      'myCurrentSquad/': 'myCurrentSquad'
+      'findSquad/:id/': 'createJoinGroup',
+      'findSquad/': 'findSquad'
+
     },
 
     initialize: function(){
@@ -59,12 +60,6 @@ var AppRouter = Backbone.Router.extend({
         document.getElementById('app')
       );
     },
-    myCurrentSquad: function(){
-      ReactDOM.render(
-        React.createElement(MyCurrentSquadContainer),
-        document.getElementById('app')
-      );
-    },
     createSquad: function(){
       ReactDOM.render(
         React.createElement(CreateSquadContainer, {router:this}),
@@ -74,6 +69,12 @@ var AppRouter = Backbone.Router.extend({
     findSquad: function(){
       ReactDOM.render(
         React.createElement(FindSquadContainer, {router:this}),
+        document.getElementById('app')
+      );
+    },
+    createJoinGroup: function(squadId){
+      ReactDOM.render(
+        React.createElement(MyCurrentSquadContainer, {squadId: squadId}),
         document.getElementById('app')
       );
     }
