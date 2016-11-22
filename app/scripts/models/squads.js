@@ -3,7 +3,8 @@ var Backbone = require('backbone');
 var CreateSquadModel = Backbone.Model.extend({
   defaults: {
     players: '',
-    message: ''
+    message: '',
+    creator: {}
   },
   idAttribute: 'objectId',
   urlRoot: 'https://colinmck14.herokuapp.com/classes/Squads/'

@@ -4,6 +4,7 @@ var Backbone = require('backbone');
 var Template = require('./templates.jsx').Template;
 var CreateSquadCollection = require('../models/squads.js').CreateSquadCollection;
 var CreateSquadModel = require('../models/squads.js').CreateSquadModel;
+var User = require('../models/users.js').User;
 
 
 var CreateSquad = React.createClass({
@@ -22,7 +23,11 @@ var CreateSquad = React.createClass({
     var collection = this.props.collection;
     var self = this;
 
-    collection.create(this.state,{success: function(model){
+    var user = User.current();
+    var squad = new CreateSquadModel(this.state);
+    squad.set('creator', {'__type': 'Pointer', 'className': '_User', 'objectId': user.get('objectId')})
+
+    collection.create(squad,{success: function(model){
       self.props.router.navigate('findSquad/' + model.get('objectId') + '/', {trigger: true});
 
     }});

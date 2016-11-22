@@ -6,9 +6,13 @@ var CreateSquadModel = require('../models/squads.js').CreateSquadModel;
 
 var MyCurrentSquad = React.createClass({
   render: function(){
+    var creator = this.props.squad.get('creator');
     return (
       <div>
         <h1 id="example">{this.props.squad.get('message')}</h1>
+        <a href={'#userProfile/' + creator.objectId}>
+        {creator.qusername}
+        </a>
       </div>
     );
   }
@@ -26,7 +30,7 @@ var MyCurrentSquadContainer = React.createClass({
     var self = this;
     currentSquad.set({objectId: objectId});
 
-    currentSquad.fetch().then(function(){
+    currentSquad.fetch({data: {include: 'creator'}}).then(function(){
       self.setState({squad: currentSquad});
     });
   },

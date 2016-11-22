@@ -32,6 +32,12 @@ var User = Backbone.Model.extend({
       router.navigate('', {trigger: true});
     });
   }
+},{
+  //retrieving user info from localStorage
+  current: function(){
+    var userData = JSON.parse(localStorage.getItem('user'));
+    return new User(userData);
+  }
 });
 
 

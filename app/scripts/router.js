@@ -19,7 +19,7 @@ var AppRouter = Backbone.Router.extend({
       '': 'login',
       'newUser/': 'newUser',
       'chooseGame/': 'chooseGame',
-      'userProfile/': 'userProfile',
+      'userProfile/:id': 'userProfile',
       'profileSettings/': 'profileSettings',
       'createSquad/': 'createSquad',
       'findSquad/:id/': 'createJoinGroup',
