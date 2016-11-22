@@ -1,12 +1,24 @@
 var React = require('react');
 var Backbone = require('backbone');
 
+
+
 var Template = require('./templates.jsx').Template;
 var CreateSquadCollection = require('../models/squads.js').CreateSquadCollection;
+var CreateSquadModel = require('../models/squads.js').CreateSquadModel;
+var User = require('../models/users.js').User;
 
 
 var FindSquad = React.createClass({
   toMyCurrentSquad: function(squadId){
+
+    var user = User.current();
+    var squad = new CreateSquadModel(this.state);
+    user.set('squad', {'__type': 'Pointer', 'className': 'Squads', 'objectId': squadId})
+    user.userAuth().save().then(function(response){
+      console.log(response);
+    });
+
     this.props.router.navigate('findSquad/' + squadId + '/', {trigger: true});
   },
   render: function(){

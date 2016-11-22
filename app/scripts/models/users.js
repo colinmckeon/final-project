@@ -11,6 +11,10 @@ var User = Backbone.Model.extend({
   parse: function(data){
     return data.results;
   },
+  userAuth: function(){
+    setupParse('genji', 'junkrat', this.get('sessionToken'));
+    return this;
+  },
   logIn: function(email, password, router){
     var self = this;
     var loginUrl = 'https://colinmck14.herokuapp.com/' + 'login?username=' + encodeURI(email) + '&password=' + encodeURI(password);
@@ -31,6 +35,12 @@ var User = Backbone.Model.extend({
       localStorage.setItem('user', JSON.stringify(self.toJSON()));
       router.navigate('', {trigger: true});
     });
+  },
+  save: function(attributes, options){
+    delete this.attributes.createdAt;
+    delete this.attributes.updatedAt;
+
+    return Backbone.Model.prototype.save.apply(this, arguments);
   }
 },{
   //retrieving user info from localStorage
