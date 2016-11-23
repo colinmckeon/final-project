@@ -36,7 +36,7 @@ var NavBar = React.createClass({
               <li className="dropdown">
                 <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Profile <i className="fa fa-user" aria-hidden="true"></i><span className="caret"></span></a>
                 <ul className="dropdown-menu">
-                  <li><a href="#userProfile/">Go To</a></li>
+                  <li><a href="#userProfile/:id">Go To</a></li>
                   <li role="separator" className="divider"></li>
                   <li><a href="#profileSettings/">Settings <i className="fa fa-wrench" aria-hidden="true"></i></a></li>
                 </ul>
