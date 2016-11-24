@@ -7,7 +7,7 @@ var ImageUpload = React.createClass({
   render: function(){
     return (
       <div>
-        <h1 id="example">USER PROFILE</h1>
+        <h1 id="example">PERSONAL USER PROFILE</h1>
       </div>
     );
   }
