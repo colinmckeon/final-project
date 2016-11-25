@@ -35,7 +35,7 @@ var MyCurrentSquadContainer = React.createClass({
     });
   },
   render: function(){
-    // console.log(this.props.squadId);
+    console.log(this.props.squadId);
     return (
 
         <Template>
