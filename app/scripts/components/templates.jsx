@@ -1,12 +1,21 @@
 var Backbone = require('backbone');
 var React = require('react');
 
+var User = require('../models/users.js').User;
+
 
 var NavBar = React.createClass({
+  getInitialState: function(){
+    return {
+      user: User.current()
+    }
+  },
   handleLogOut: function(){
     localStorage.clear();
   },
   render: function(){
+    var user = this.state.user;
+
     return (
       <nav className="navbar navbar-default">
         <div className="container-fluid">
@@ -34,9 +43,9 @@ var NavBar = React.createClass({
 
             <ul className="nav navbar-nav navbar-right">
               <li className="dropdown">
-                <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Profile <i className="fa fa-user" aria-hidden="true"></i><span className="caret"></span></a>
+                <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{user.get('qusername')} <i className="fa fa-user" aria-hidden="true"></i><span className="caret"></span></a>
                 <ul className="dropdown-menu">
-                  <li><a href="#userProfile/:id">Go To</a></li>
+                  <li><a href={'#userProfile/' + user.get('objectId')}>My Profile</a></li>
                   <li role="separator" className="divider"></li>
                   <li><a href="#profileSettings/">Settings <i className="fa fa-wrench" aria-hidden="true"></i></a></li>
                 </ul>

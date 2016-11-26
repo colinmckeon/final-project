@@ -3,16 +3,36 @@ var Backbone = require('backbone');
 
 var Template = require('./templates.jsx').Template;
 var CreateSquadModel = require('../models/squads.js').CreateSquadModel;
+var User = require('../models/users.js').User;
+var SquadMemberCollection = require('../models/squads.js').SquadMemberCollection;
 
 var MyCurrentSquad = React.createClass({
   render: function(){
     var creator = this.props.squad.get('creator');
     return (
-      <div>
-        <h1 id="example">{this.props.squad.get('message')}</h1>
-        <a href={'#userProfile/' + creator.objectId}>
-        {creator.qusername}
-        </a>
+      <div className="col-md-8 col-md-offset-2">
+        <div>
+          <a id="squadCreatorLink" href={'#userProfile/' + creator.objectId}>
+          Squad Creator: {creator.qusername}
+          </a>
+        </div>
+
+        <div>
+          <h5>Squad Members:</h5>
+          <ul>
+            {this.props.members.map(function(member){
+              return (
+                <li key={member.cid}>
+                <a href={'#userProfile/' + member.get('objectId')}>{member.get('qusername')}</a>
+                </li>
+              )
+            })}</ul>
+        </div>
+
+        <div>
+          <h4 id="squadCreatorMessageTitle">Squad Creator's Message:</h4>
+          <h5 className="creatorMessageCurrentSquad well">{this.props.squad.get('message')}</h5>
+        </div>
       </div>
     );
   }
@@ -21,25 +41,36 @@ var MyCurrentSquad = React.createClass({
 var MyCurrentSquadContainer = React.createClass({
   getInitialState: function(){
     return {
-      squad: new CreateSquadModel()
+      squad: new CreateSquadModel(),
+      members: new SquadMemberCollection()
     }
   },
   componentWillMount: function(){
     var currentSquad = this.state.squad;
+    var members = this.state.members;
     var objectId = this.props.squadId;
     var self = this;
+
     currentSquad.set({objectId: objectId});
 
     currentSquad.fetch({data: {include: 'creator'}}).then(function(){
       self.setState({squad: currentSquad});
     });
+
+    members.squadId = objectId;
+    members.fetch().then(function(){
+      self.setState({members: members});
+    });
   },
   render: function(){
-    console.log(this.props.squadId);
     return (
 
         <Template>
-          <MyCurrentSquad squad={this.state.squad}/>
+          <div className="container">
+            <div className="row">
+              <MyCurrentSquad members={this.state.members} user={this.state.user} squad={this.state.squad}/>
+            </div>
+          </div>
         </Template>
 
 

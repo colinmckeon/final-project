@@ -16,7 +16,7 @@ var FindSquad = React.createClass({
     var squad = new CreateSquadModel(this.state);
     user.set('squad', {'__type': 'Pointer', 'className': 'Squads', 'objectId': squadId})
     user.userAuth().save().then(function(response){
-      console.log(response);
+      console.log('userAuth:', response);
     });
 
     this.props.router.navigate('findSquad/' + squadId + '/', {trigger: true});

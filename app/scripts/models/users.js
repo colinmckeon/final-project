@@ -8,9 +8,9 @@ var User = Backbone.Model.extend({
   },
   idAttribute: 'objectId',
   urlRoot: 'https://colinmck14.herokuapp.com/users',
-  parse: function(data){
-    return data.results;
-  },
+  // parse: function(data){
+  //   return data.results;
+  // },
   userAuth: function(){
     setupParse('genji', 'junkrat', this.get('sessionToken'));
     return this;
@@ -21,7 +21,6 @@ var User = Backbone.Model.extend({
 
     $.ajax(loginUrl).then(function(response){
       self.set(response)
-      console.log(response);
       self.set('password', '')
       localStorage.setItem('user', JSON.stringify(self.toJSON()));
       router.navigate('chooseGame/', {trigger: true});

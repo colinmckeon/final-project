@@ -19,6 +19,9 @@ img {
 //
 // BEGINNING EXAMPLE LAYOUT
 //
+li{
+  color: white;
+}
 body{
   background-color: #262831;
 }
@@ -163,6 +166,26 @@ label{
 }
 //
 //END CREATE SQUAD SCREEN
+//
+
+////////////////////////////////////////////
+
+
+//
+//BEGINNING MY CURRENT SQUAD SCREEN
+//
+#squadCreatorLink{
+  font-size: 22px;
+  color: #B2B4B3;
+}
+#squadCreatorMessageTitle{
+  color: #00AC1C;
+}
+.creatorMessageCurrentSquad{
+  color: #262831;
+}
+//
+//END MY CURRENT SQUAD SCREEN
 //
 
 ////////////////////////////////////////////
