@@ -35,7 +35,6 @@ var Game = React.createClass({
     var gameHtml = this.props.gameList.map(function(item, index){
       return (
         <div key={item.get('objectId') + index}>
-          <h1 id="chooseGameScreenTitle">Find or Create a Squad to "QueueUp"</h1>
           <div className="col-md-3">
               <div onClick={self.openModal} className="gameCover-holder">
                 <h5 className="chooseGameTitle">{item.get('name')}</h5>
@@ -47,6 +46,7 @@ var Game = React.createClass({
       );
     });
       return(
+
         <div>
           <Modal isOpen={this.state.modalIsOpen}>
             <div>
@@ -68,6 +68,7 @@ var Game = React.createClass({
                 <button onClick={this.toCreateSquad} type="button" className="btn btn-lg btn-block createSquadButton">Create a QueueSquad</button>
               </div>
           </Modal>
+            <h1 id="chooseGameScreenTitle">Find or Create a Squad to "QueueUp"</h1>
             {gameHtml}
         </div>
       )
