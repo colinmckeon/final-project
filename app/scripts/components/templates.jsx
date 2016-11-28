@@ -15,7 +15,7 @@ var NavBar = React.createClass({
   },
   render: function(){
     var user = this.state.user;
-
+    var squadLink = user.get('squad') ? '#findSquad/' + user.get('squad').objectId + '/': '#chooseGame/';
     return (
       <nav className="navbar navbar-default">
         <div className="container-fluid">
@@ -36,7 +36,7 @@ var NavBar = React.createClass({
                 <ul className="dropdown-menu">
                   <li><a href="#chooseGame/">Find / Create Squad </a></li>
                   <li role="separator" className="divider"></li>
-                  <li><a href={'#findSquad/' + user.get('squad').objectId + '/'}>My Current Squad</a></li>
+                  <li><a href={squadLink}>My Current Squad</a></li>
                 </ul>
               </li>
             </ul>
