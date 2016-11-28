@@ -15,7 +15,7 @@ var MyCurrentSquad = React.createClass({
   componentWillMount: function(){
     var members = this.state.members;
     var self = this;
-    
+
     members.fetch().then(function(){
       self.setState({members: members});
     });
@@ -25,18 +25,19 @@ var MyCurrentSquad = React.createClass({
     return (
       <div className="col-md-8 col-md-offset-2">
         <div>
+          <h2 className="squadCreatorTitle">Squad Creator: </h2> &nbsp;
           <a id="squadCreatorLink" href={'#userProfile/' + creator.objectId}>
-          Squad Creator: {creator.qusername}
+            {creator.qusername}
           </a>
         </div>
 
         <div>
-          <h5>Squad Members:</h5>
+          <h5 className="squadMembersTitleCurrentSquad">Squad Members:</h5>
           <ul>
             {this.state.members.map(function(member){
               return (
                 <li key={member.cid}>
-                <a href={'#userProfile/' + member.get('objectId')}>{member.get('qusername')}</a>
+                <a className="listedCurrentSquadMembers" href={'#userProfile/' + member.get('objectId')}>{member.get('qusername')}</a>
                 </li>
               )
             })}</ul>

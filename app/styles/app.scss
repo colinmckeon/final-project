@@ -42,8 +42,8 @@ h2{
 // BEGINNING NAVBAR
 //
 .navBarLogo{
-  // // height: 5px;
-  // width: 5px;
+  height: 50px;
+  width: 75px;
 }
 //
 // END NAVBAR
@@ -197,9 +197,19 @@ label{
 //
 //BEGINNING MY CURRENT SQUAD SCREEN
 //
+.squadCreatorTitle{
+  color: #B2B4B3;
+  display: inline-block;
+}
 #squadCreatorLink{
   font-size: 22px;
+  color: #00AC1C;
+}
+.squadMembersTitleCurrentSquad{
   color: #B2B4B3;
+}
+.listedCurrentSquadMembers{
+  color: #00AC1C;
 }
 #squadCreatorMessageTitle{
   color: #00AC1C;
