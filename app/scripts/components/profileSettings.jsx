@@ -8,9 +8,15 @@ var User = require('../models/users.js').User;
 var ProfileSettings = React.createClass({
   handleSubmit: function(e){
     e.preventDefault();
+    var self = this;
 
     this.props.avatar.save().then(function(response){
-      console.log(response);
+      self.props.user.set('avatar', response.url);
+      self.props.user.userAuth().save();
+      localStorage.setItem('user', JSON.stringify(self.props.user.toJSON()));
+
+      Backbone.history.navigate('userProfile/' + self.props.user.get('objectId'), {trigger: true})
+
     })
   },
   handleAvatar: function(e){

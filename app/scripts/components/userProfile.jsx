@@ -7,6 +7,7 @@ var User = require('../models/users.js').User;
 
 var UserProfile = React.createClass({
   render: function(){
+    console.log(this.props.user);
     return (
       <div>
 

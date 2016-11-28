@@ -21,6 +21,7 @@ var File = Backbone.Model.extend({
       request.setRequestHeader("X-Parse-Application-Id", 'genji');
       request.setRequestHeader("X-Parse-REST-API-Key", 'junkrat');
       request.setRequestHeader("Content-Type", image.type);
+      request.setRequestHeader("X-Parse-Session-Token", JSON.parse(localStorage.getItem('user')).sessionToken);
     };
     options.processData = false;
     options.contentType = false;
