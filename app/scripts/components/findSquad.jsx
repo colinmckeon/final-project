@@ -75,8 +75,8 @@ var FindSquadContainer = React.createClass({
             <div className="row">
 
               <FindSquad squadListing={this.state.squadListing} router={this.props.router}/>
-            </div>
 
+            </div>
           </div>
         </Template>
 
