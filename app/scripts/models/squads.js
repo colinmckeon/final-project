@@ -23,7 +23,6 @@ var CreateSquadCollection = Backbone.Collection.extend({
       where = '?where={"game": {"__type": "Pointer", "className": "Games", "objectId": "'+ this.gameId +'"}}';
       // this.gameId = '';
     }
-
     return 'https://colinmck14.herokuapp.com/classes/Squads/' + where;
   }
 });

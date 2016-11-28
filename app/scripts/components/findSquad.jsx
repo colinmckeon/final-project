@@ -61,9 +61,9 @@ var FindSquadContainer = React.createClass({
   componentWillMount: function(){
     var self = this;
     var collection = this.state.collection;
-    // collection.gameId = ....
+    collection.gameId = this.props.gameId;
+    console.log(collection.gameId);
     collection.fetch().then(function(response){
-
       self.setState({squadListing: response.results});
     });
   },
@@ -74,7 +74,10 @@ var FindSquadContainer = React.createClass({
           <div className="container">
             <div className="row">
 
-              <FindSquad squadListing={this.state.squadListing} router={this.props.router}/>
+              <FindSquad
+                squadListing={this.state.squadListing}
+                router={this.props.router}
+                />
 
             </div>
           </div>

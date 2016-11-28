@@ -7,6 +7,19 @@ var User = require('../models/users.js').User;
 var SquadMemberCollection = require('../models/squads.js').SquadMemberCollection;
 
 var MyCurrentSquad = React.createClass({
+  getInitialState: function(){
+    return {
+      members: this.props.members
+    }
+  },
+  componentWillMount: function(){
+    var members = this.state.members;
+    var self = this;
+    
+    members.fetch().then(function(){
+      self.setState({members: members});
+    });
+  },
   render: function(){
     var creator = this.props.squad.get('creator');
     return (
@@ -20,7 +33,7 @@ var MyCurrentSquad = React.createClass({
         <div>
           <h5>Squad Members:</h5>
           <ul>
-            {this.props.members.map(function(member){
+            {this.state.members.map(function(member){
               return (
                 <li key={member.cid}>
                 <a href={'#userProfile/' + member.get('objectId')}>{member.get('qusername')}</a>
