@@ -2,6 +2,7 @@ var React = require('react');
 var Backbone = require('backbone');
 
 var Template = require('./templates.jsx').Template;
+var User = require('../models/users.js').User;
 
 
 var UserProfile = React.createClass({
@@ -12,7 +13,7 @@ var UserProfile = React.createClass({
         <div className="col-md-3 col-md-offset-1">
           <div>
             <div className="profilePictureHolder">
-               <h5>PROFILE PICTURE UPLOAD GOES HERE</h5>
+               <img src={this.props.user.get('avatar')}></img>
             </div>
           </div>
         </div>
@@ -40,13 +41,19 @@ var UserProfile = React.createClass({
 })
 
 var UserProfileContainer = React.createClass({
+  getInitialState: function(){
+    return{
+      user: User.current()
+    }
+  },
   render: function(){
+    console.log(this.state.user);
     return (
       <div>
         <Template />
           <div className="container">
             <div className="row">
-              <UserProfile/>
+              <UserProfile user={this.state.user}/>
             </div>
           </div>
       </div>
