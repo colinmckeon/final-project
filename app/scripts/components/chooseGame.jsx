@@ -54,14 +54,16 @@ var Game = React.createClass({
             </div>
             <br/>
 
-            <div>
+            <div className="findSquadButtonHolder">
               <button onClick={this.toFindSquad} type="button" className="btn btn-lg btn-block findSquadButton">Find a QueueSquad</button>
             </div>
 
             <br/>
+            <br/>
             <div className="modal-or">
               <span>OR</span>
             </div>
+            <br/>
             <br/>
 
               <div>
