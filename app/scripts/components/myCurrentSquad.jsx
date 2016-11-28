@@ -20,8 +20,17 @@ var MyCurrentSquad = React.createClass({
       self.setState({members: members});
     });
   },
+  handleDelete: function(){
+    this.state.members.each(function(member){
+      member.set('squad', null);
+      member.save();
+    })
+    this.props.squad.destroy();
+    Backbone.history.navigate('chooseGame/', {trigger: true})
+  },
   render: function(){
     var creator = this.props.squad.get('creator');
+    var isCreator = creator.objectId == User.current().get('objectId');
     return (
       <div className="col-md-8 col-md-offset-2">
         <div>
@@ -47,6 +56,7 @@ var MyCurrentSquad = React.createClass({
           <h4 id="squadCreatorMessageTitle">Squad Creator's Message:</h4>
           <h5 className="creatorMessageCurrentSquad well">{this.props.squad.get('message')}</h5>
         </div>
+        {isCreator ? <button onClick={this.handleDelete}>DELETE</button> : null}
       </div>
     );
   }

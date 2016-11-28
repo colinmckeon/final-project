@@ -28,9 +28,13 @@ var CreateSquad = React.createClass({
     squad.set('creator', {'__type': 'Pointer', 'className': '_User', 'objectId': user.get('objectId')})
     squad.set('game', {'__type': 'Pointer', 'className': 'Games', 'objectId': this.props.gameId})
 
-    collection.create(squad,{success: function(model){
-      self.props.router.navigate('findSquad/' + model.get('objectId') + '/', {trigger: true});
+    collection.create(squad,{success: function(squad){
+      user.set('squad', {'__type': 'Pointer', 'className': 'Squads', 'objectId': squad.get('objectId')})
 
+      user.userAuth().save().then(function(response){
+        localStorage.setItem('user', JSON.stringify(user.toJSON()));
+        self.props.router.navigate('findSquad/' + squad.get('objectId') + '/', {trigger: true});
+      });
     }});
 
 

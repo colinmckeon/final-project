@@ -14,12 +14,16 @@ var FindSquad = React.createClass({
 
     var user = User.current();
     var squad = new CreateSquadModel(this.state);
+    var self = this;
+
     user.set('squad', {'__type': 'Pointer', 'className': 'Squads', 'objectId': squadId})
+
     user.userAuth().save().then(function(response){
-      console.log('userAuth:', response);
+      localStorage.setItem('user', JSON.stringify(user.toJSON()));
+      self.props.router.navigate('findSquad/' + squadId + '/', {trigger: true});
     });
 
-    this.props.router.navigate('findSquad/' + squadId + '/', {trigger: true});
+
   },
   render: function(){
     var self = this;

@@ -36,7 +36,7 @@ var NavBar = React.createClass({
                 <ul className="dropdown-menu">
                   <li><a href="#chooseGame/">Find / Create Squad </a></li>
                   <li role="separator" className="divider"></li>
-                  <li><a href="#findSquad/:id">My Current Squad</a></li>
+                  <li><a href={'#findSquad/' + user.get('squad').objectId + '/'}>My Current Squad</a></li>
                 </ul>
               </li>
             </ul>
