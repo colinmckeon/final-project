@@ -5,22 +5,40 @@ var Template = require('./templates.jsx').Template;
 var FileModel = require('../models/fileUpload.js').File;
 
 var ProfileSettings = React.createClass({
+  handleSubmit: function(e){
+    e.preventDefault();
+    
+    this.props.avatar.save().then(function(response){
+      console.log(response);
+    })
+  },
+  handleAvatar: function(e){
+    e.preventDefault();
+
+    var attachedAvatar = e.target.files[0];
+    var avatar = this.props.avatar;
+
+    avatar.set('data', attachedAvatar);
+
+    this.setState({avatar: avatar});
+
+  },
   render: function(){
     return (
       <div>
 
         <div className="col-md-3 col-md-offset-1">
           <div>
+
             <div className="profilePictureHolder">
-              <form id="profile" action="/dist/" method="POST" encType="multipart/form-data">
-                <input type="file" id="pic" name="pic"/>
-
+              <form onSubmit={this.handleSubmit} id="avatarForm" action="/dist/" method="POST" encType="multipart/form-data">
+                <input onChange={this.handleAvatar} type="file" id="avatar" name="avatar"/>
                 <br/>
                 <br/>
-
                 <input type="submit"/>
               </form>
             </div>
+
           </div>
         </div>
 
@@ -49,11 +67,17 @@ var ProfileSettings = React.createClass({
 
 
 var ProfileSettingsContainer = React.createClass({
+  getInitialState: function(){
+    var avatar = new FileModel();
+    return{
+      'avatar': avatar
+    }
+  },
   render: function(){
     return (
       <div>
         <Template />
-        <ProfileSettings />
+        <ProfileSettings avatar={this.state.avatar}/>
       </div>
     );
   }
