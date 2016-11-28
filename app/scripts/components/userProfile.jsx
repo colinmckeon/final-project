@@ -20,16 +20,16 @@ var UserProfile = React.createClass({
         <div className="col-md-8">
           <div className="qusernameGamertagHolder">
             <h1 id="profileQusername">QUSERNAME GOES HERE</h1>
-            <h4 id="gamertagLabel">XBOX Live Gamertag: </h4> &nbsp;
-            <h4 id="profileGamertag">GAMERTAG GOES HERE</h4>
+            <h5 id="gamertagLabel">XBOX Live Gamertag: </h5> &nbsp;
+            <h5 id="profileGamertag">GAMERTAG GOES HERE</h5>
           </div>
           <div>
-            <h5>Most Played Games:</h5>
+            <h5 id="mostPlayedGamesLabel">Most Played Games:</h5>
             <ul>
-              <li>GAME #1</li>
-              <li>GAME #2</li>
-              <li>GAME #3</li>
-              <li>GAME #4</li>
+              <li id="profileGamesList">GAME #1</li>
+              <li id="profileGamesList">GAME #2</li>
+              <li id="profileGamesList">GAME #3</li>
+              <li id="profileGamesList">GAME #4</li>
             </ul>
           </div>
         </div>
