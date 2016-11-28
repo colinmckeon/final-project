@@ -65,7 +65,7 @@ var CreateSquad = React.createClass({
 
             <div>
               <label forHTML="creatorMessage">Your Message to the Squad:</label>
-              <textarea onChange={this.handleCreatorMessage} value={this.state.message} id="creatorMessage" placeholder="E.g. I am playing on e.g. (PC, XBOX, Playstation) I am looking to find a squad of competitive players who's skill level is 'blank'. Everyone needs mic, and no arguing is allowed.  Looking for players attempting to accomplish 'blank'.  Trying to start a queue in at most, 15 minutes. Let's pwn some noobs!!!!"></textarea>
+              <textarea onChange={this.handleCreatorMessage} value={this.state.message} id="creatorMessage" placeholder="E.g. I am playing on XBOXOne, and am looking to find a squad of competitive players who's skill level is 'blank'. Everyone needs mic, and no arguing is allowed.  Looking for players e.g. that want to play competitively OR that want to play socially. Trying to start a queue in at most, 15 minutes. Add me on XBOX Live and we will start a party.  Let's pwn some noobs!!!!"></textarea>
             </div>
             <br />
 
