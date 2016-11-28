@@ -38,7 +38,7 @@ var Game = React.createClass({
           <div className="col-md-3">
               <div onClick={self.openModal} className="gameCover-holder">
                 <h5 className="chooseGameTitle">{item.get('name')}</h5>
-                <img src={item.get('coverArt')} />
+                <img className="gameCoverArtImage" src={item.get('coverArt')} />
               </div>
           </div>
         </div>
