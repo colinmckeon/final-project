@@ -20,9 +20,9 @@ var UserProfile = React.createClass({
 
         <div className="col-md-8">
           <div className="qusernameGamertagHolder">
-            <h1 id="profileQusername">QUSERNAME GOES HERE</h1>
+            <h1 id="profileQusername">{this.props.user.get('qusername')}</h1>
             <h5 id="gamertagLabel">XBOX Live Gamertag: </h5> &nbsp;
-            <h5 id="profileGamertag">GAMERTAG GOES HERE</h5>
+            <h5 id="profileGamertag">{this.props.user.get('gamertag')}</h5>
           </div>
           <div>
             <h5 id="mostPlayedGamesLabel">Most Played Games:</h5>

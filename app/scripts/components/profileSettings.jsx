@@ -3,11 +3,12 @@ var Backbone = require('backbone');
 
 var Template = require('./templates.jsx').Template;
 var FileModel = require('../models/fileUpload.js').File;
+var User = require('../models/users.js').User;
 
 var ProfileSettings = React.createClass({
   handleSubmit: function(e){
     e.preventDefault();
-    
+
     this.props.avatar.save().then(function(response){
       console.log(response);
     })
@@ -44,9 +45,9 @@ var ProfileSettings = React.createClass({
 
         <div className="col-md-8">
           <div className="qusernameGamertagHolder">
-            <h1 id="profileQusername">QUSERNAME GOES HERE</h1>
+            <h1 id="profileQusername">{this.props.user.get('qusername')}</h1>
             <h5 id="gamertagLabel">XBOX Live Gamertag: </h5> &nbsp;
-            <h5 id="profileGamertag">GAMERTAG GOES HERE</h5>
+            <h5 id="profileGamertag">{this.props.user.get('gamertag')}</h5>
           </div>
           <div>
             <h5 id="mostPlayedGamesLabel">Most Played Games:</h5>
@@ -70,14 +71,18 @@ var ProfileSettingsContainer = React.createClass({
   getInitialState: function(){
     var avatar = new FileModel();
     return{
-      'avatar': avatar
+      'avatar': avatar,
+      user: User.current()
     }
   },
   render: function(){
     return (
       <div>
         <Template />
-        <ProfileSettings avatar={this.state.avatar}/>
+        <ProfileSettings
+          avatar={this.state.avatar}
+          user={this.state.user}
+          />
       </div>
     );
   }
