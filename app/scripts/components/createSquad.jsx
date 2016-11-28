@@ -26,6 +26,7 @@ var CreateSquad = React.createClass({
     var user = User.current();
     var squad = new CreateSquadModel(this.state);
     squad.set('creator', {'__type': 'Pointer', 'className': '_User', 'objectId': user.get('objectId')})
+    squad.set('game', {'__type': 'Pointer', 'className': 'Games', 'objectId': this.props.gameId})
 
     collection.create(squad,{success: function(model){
       self.props.router.navigate('findSquad/' + model.get('objectId') + '/', {trigger: true});
@@ -85,7 +86,12 @@ var CreateSquadContainer = React.createClass({
         <Template>
           <div className="container">
             <div className="row">
-              <CreateSquad collection={this.state.collection} router={this.props.router} squadId={this.props.squadId}/>
+              <CreateSquad
+                collection={this.state.collection}
+                router={this.props.router}
+                squadId={this.props.squadId}
+                gameId={this.props.gameId}
+                />
             </div>
           </div>
         </Template>

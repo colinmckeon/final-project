@@ -14,21 +14,22 @@ var Game = React.createClass({
   getInitialState: function(){
    return {
      modalIsOpen: false,
+     selectedGame: '',
     };
   },
- openModal: function(){
-   this.setState({modalIsOpen: true});
+ openModal: function(gameId){
+   this.setState({modalIsOpen: true, selectedGame: gameId});
   },
  closeModal: function(){
     this.setState({modalIsOpen: false});
   },
   toFindSquad: function(e){
     e.preventDefault();
-    this.props.router.navigate('findSquad/', {trigger: true});
+    this.props.router.navigate('games/' + this.state.selectedGame + '/squads/', {trigger: true});
   },
   toCreateSquad: function(e){
     e.preventDefault();
-    this.props.router.navigate('createSquad/', {trigger: true});
+    this.props.router.navigate('games/' + this.state.selectedGame + '/squads/create/', {trigger: true});
   },
   render: function(){
     var self = this;
@@ -36,7 +37,7 @@ var Game = React.createClass({
       return (
         <div key={item.get('objectId') + index}>
           <div className="col-md-3">
-              <div onClick={self.openModal} className="gameCover-holder">
+              <div onClick={function(){self.openModal(item.get('objectId'))}} className="gameCover-holder">
                 <h5 className="chooseGameTitle">{item.get('name')}</h5>
                 <img className="gameCoverArtImage" src={item.get('coverArt')} />
               </div>

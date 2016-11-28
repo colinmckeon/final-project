@@ -15,7 +15,17 @@ var CreateSquadModel = Backbone.Model.extend({
 
 var CreateSquadCollection = Backbone.Collection.extend({
   model: CreateSquadModel,
-  url: 'https://colinmck14.herokuapp.com/classes/Squads/'
+  gameId: '',
+  url: function(){
+    var where = '';
+
+    if(this.gameId){
+      where = '?where={"game": {"__type": "Pointer", "className": "Games", "objectId": "'+ this.gameId +'"}}';
+      // this.gameId = '';
+    }
+
+    return 'https://colinmck14.herokuapp.com/classes/Squads/' + where;
+  }
 });
 
 

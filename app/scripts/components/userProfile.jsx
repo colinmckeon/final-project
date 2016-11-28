@@ -26,10 +26,10 @@ var UserProfile = React.createClass({
           <div>
             <h5 id="mostPlayedGamesLabel">Most Played Games:</h5>
             <ul>
-              <li id="profileGamesList">GAME #1</li>
-              <li id="profileGamesList">GAME #2</li>
-              <li id="profileGamesList">GAME #3</li>
-              <li id="profileGamesList">GAME #4</li>
+              <li className="profileGamesList">GAME #1</li>
+              <li className="profileGamesList">GAME #2</li>
+              <li className="profileGamesList">GAME #3</li>
+              <li className="profileGamesList">GAME #4</li>
             </ul>
           </div>
         </div>

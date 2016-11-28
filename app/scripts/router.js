@@ -22,10 +22,13 @@ var AppRouter = Backbone.Router.extend({
       'chooseGame/': 'chooseGame',
       'userProfile/:id': 'userProfile',
       'profileSettings/': 'profileSettings',
-      'createSquad/': 'createSquad',
+
+      'games/:gameId/squads/': 'findSquad',
+      // 'createSquad/': 'createSquad',
+      'games/:gameId/squads/create/': 'createSquad',
+
       'findSquad/:id/': 'createJoinGroup',
       'findSquad/': 'findSquad'
-
     },
 
     initialize: function(){
@@ -61,9 +64,9 @@ var AppRouter = Backbone.Router.extend({
         document.getElementById('app')
       );
     },
-    createSquad: function(){
+    createSquad: function(gameId){
       ReactDOM.render(
-        React.createElement(CreateSquadContainer, {router:this}),
+        React.createElement(CreateSquadContainer, {router:this, gameId: gameId}),
         document.getElementById('app')
       );
     },
