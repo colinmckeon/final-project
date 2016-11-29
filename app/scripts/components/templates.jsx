@@ -60,12 +60,30 @@ var NavBar = React.createClass({
 });
 
 
+var Footer = React.createClass({
+  render: function(){
+    return (
+      <div>
+        <footer className="footer">
+
+        </footer>
+      </div>
+    );
+  }
+});
+
+
 var Template = React.createClass({
   render: function(){
     return (
       <div>
         <NavBar />
-        {this.props.children}
+
+        <div className="content">
+          {this.props.children}
+        </div>
+
+        <Footer />
       </div>
     );
   }

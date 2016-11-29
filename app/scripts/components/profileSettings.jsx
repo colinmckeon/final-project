@@ -84,11 +84,12 @@ var ProfileSettingsContainer = React.createClass({
   render: function(){
     return (
       <div>
-        <Template />
-        <ProfileSettings
-          avatar={this.state.avatar}
-          user={this.state.user}
-          />
+        <Template>
+          <ProfileSettings
+            avatar={this.state.avatar}
+            user={this.state.user}
+            />
+        </Template>
       </div>
     );
   }

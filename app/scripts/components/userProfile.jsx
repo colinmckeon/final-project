@@ -75,7 +75,7 @@ var UserProfileContainer = React.createClass({
   render: function(){
     return (
       <div>
-        <Template />
+        <Template>
           <div className="container">
             <div className="row">
               <UserProfile
@@ -84,6 +84,7 @@ var UserProfileContainer = React.createClass({
                 />
             </div>
           </div>
+        </Template>
       </div>
     );
   }

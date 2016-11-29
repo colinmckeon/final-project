@@ -38,20 +38,6 @@ h2{
 
 ////////////////////////////////////////////
 
-//
-// BEGINNING NAVBAR
-//
-.navBarLogo{
-  height: 50px;
-  width: 75px;
-}
-//
-// END NAVBAR
-//
-
-
-////////////////////////////////////////////
-
 
 //
 //BEGINNING LOGIN STYLE
@@ -258,6 +244,39 @@ label{
 }
 //
 //END MY PROFILE SCREEN
+//
+
+
+////////////////////////////////////////////
+
+
+//
+// BEGINNING NAVBAR
+//
+.content{
+  min-height: calc(100vh - 50px);
+}
+.navBarLogo{
+  height: 50px;
+  width: 75px;
+}
+//
+// END NAVBAR
+//
+
+
+////////////////////////////////////////////
+
+
+//
+//BEGINNING FOOTER
+//
+.footer{
+  height: 70px;
+  background-color: #00AC1C;
+}
+//
+//END FOOTER
 //
 
 
