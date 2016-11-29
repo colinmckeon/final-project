@@ -60,7 +60,7 @@ var MyCurrentSquad = React.createClass({
           <h4 id="squadCreatorMessageTitle">Squad Creator's Message:</h4>
           <h5 className="creatorMessageCurrentSquad well">{this.props.squad.get('message')}</h5>
         </div>
-        {isCreator ? <button onClick={this.handleDelete}>DELETE</button> : null}
+        {isCreator ? <button className="btn removeSquadButton" onClick={this.handleDelete}>REMOVE SQUAD <i className="fa fa-trash-o" aria-hidden="true"></i></button> : null}
       </div>
     );
   }

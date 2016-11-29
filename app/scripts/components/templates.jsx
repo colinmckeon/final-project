@@ -26,31 +26,31 @@ var NavBar = React.createClass({
               <span className="icon-bar"></span>
               <span className="icon-bar"></span>
             </button>
-            <img src="images/queueuplogo.png" className="navBarLogo"></img>
+            <img src="images/RobotoFont/QUp_Roboto2.svg" className="navBarLogo"></img>
           </div>
 
           <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul className="nav navbar-nav">
               <li className="dropdown">
-                <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Squads <i className="fa fa-users" aria-hidden="true"></i><span className="caret"></span></a>
-                <ul className="dropdown-menu">
-                  <li><a href="#chooseGame/">Find / Create Squad </a></li>
-                  <li role="separator" className="divider"></li>
-                  <li><a href={squadLink}>My Current Squad</a></li>
+                <a href="#" id="squadsNavBarDropdown" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Squads <i className="fa fa-users" aria-hidden="true"></i><span className="caret"></span></a>
+                <ul id="dropdownBackgroundA" className="dropdown-menu">
+                  <li><a className="navBarDropdownLinks" href="#chooseGame/">Find / Create Squad </a></li>
+                  <li role="separator" id="seperatorDropdownA" className="divider"></li>
+                  <li><a className="navBarDropdownLinks" href={squadLink}>My Current Squad</a></li>
                 </ul>
               </li>
             </ul>
 
             <ul className="nav navbar-nav navbar-right">
               <li className="dropdown">
-                <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{user.get('qusername')} <i className="fa fa-user" aria-hidden="true"></i><span className="caret"></span></a>
-                <ul className="dropdown-menu">
-                  <li><a href={'#userProfile/' + user.get('objectId')}>My Profile</a></li>
-                  <li role="separator" className="divider"></li>
-                  <li><a href="#profileSettings/">Settings <i className="fa fa-wrench" aria-hidden="true"></i></a></li>
+                <a href="#" id="myProfileNavBarDropdown" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{user.get('qusername')} <i className="fa fa-user" aria-hidden="true"></i><span className="caret"></span></a>
+                <ul id="dropdownBackgroundB" className="dropdown-menu">
+                  <li><a className="navBarDropdownLinks" href={'#userProfile/' + user.get('objectId')}>My Profile</a></li>
+                  <li role="separator" id="seperatorDropdownB" className="divider"></li>
+                  <li><a className="navBarDropdownLinks" href="#profileSettings/">Settings <i className="fa fa-wrench" aria-hidden="true"></i></a></li>
                 </ul>
               </li>
-              <li><a onClick={this.handleLogOut} href="#">Log Out <i className="fa fa-sign-out" aria-hidden="true"></i></a></li>
+              <li><a onClick={this.handleLogOut} id="logOutNavBarLink" href="#">Log Out <i className="fa fa-sign-out" aria-hidden="true"></i></a></li>
             </ul>
           </div>
         </div>

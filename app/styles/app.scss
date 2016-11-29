@@ -17,7 +17,7 @@ img {
 }
 
 //
-// BEGINNING EXAMPLE LAYOUT
+// BEGINNING BASIC LAYOUT
 //
 li{
   color: white;
@@ -25,14 +25,9 @@ li{
 body{
   background-color: #262831;
 }
-h2{
-  color: #00AC1C;
-}
-#example{
-  color: white;
-}
+
 //
-// END EXAMPLE LAYOUT
+// END BASIC LAYOUT
 //
 
 
@@ -204,6 +199,10 @@ label{
 .creatorMessageCurrentSquad{
   color: #262831;
 }
+.removeSquadButton{
+  font-weight: bold;
+  background-color: #F75E25;
+}
 //
 //END MY CURRENT SQUAD SCREEN
 //
@@ -283,9 +282,43 @@ label{
 .content{
   min-height: calc(100vh - 50px);
 }
+.navbar{
+  background-color: #B2B4B3;
+}
+#squadsNavBarDropdown{
+  color: #262831;
+  font-family: 'Roboto', sans-serif;
+  font-size: 17px;
+}
+.navBarDropdownLinks{
+  color: #262831;
+  font-family: 'Roboto', sans-serif;
+}
+#dropdownBackgroundA{
+  background-color: #00AC1C;
+}
+#dropdownBackgroundB{
+  background-color: #00AC1C;
+}
+#seperatorDropdownA{
+  background-color: #262831;
+}
+#seperatorDropdownB{
+  background-color: #262831;
+}
+#myProfileNavBarDropdown{
+  color: #262831;
+  font-family: 'Roboto', sans-serif;
+  font-size: 17px;
+}
+#logOutNavBarLink{
+  color: #262831;
+  font-family: 'Roboto', sans-serif;
+  font-size: 17px;
+}
 .navBarLogo{
-  height: 50px;
-  width: 75px;
+  height: 54px;
+  width: 105px;
 }
 //
 // END NAVBAR
@@ -300,7 +333,7 @@ label{
 //
 .footer{
   height: 70px;
-  background-color: #00AC1C;
+  background-color: #B2B4B3;
 }
 //
 //END FOOTER
