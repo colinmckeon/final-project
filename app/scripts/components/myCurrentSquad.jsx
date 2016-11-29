@@ -81,11 +81,16 @@ var MyCurrentSquadContainer = React.createClass({
 
     currentSquad.set({objectId: objectId});
 
+    setupParse('genji', 'junkrat');
+
     currentSquad.fetch({data: {include: 'creator'}}).then(function(){
       self.setState({squad: currentSquad});
     });
 
     members.squadId = objectId;
+
+    setupParse('genji', 'junkrat');
+
     members.fetch().then(function(){
       self.setState({members: members});
     });

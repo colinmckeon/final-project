@@ -6,8 +6,9 @@ var Modal = require('react-modal');
 
 var Template = require('./templates.jsx').Template;
 var gameCovers = require('../dummyData.js').gameCovers;
-
 var GameCollection = require('../models/gameCover.js').GameCollection;
+var setupParse = require('../parseUtilities.js').setupParse;
+
 
 
 var Game = React.createClass({
@@ -89,6 +90,8 @@ var ChooseGameContainer = React.createClass({
   componentWillMount: function(){
     var self = this;
     var gameCollection = this.state.collection;
+
+    setupParse('genji', 'junkrat');
 
     gameCollection.fetch().then(function(){
       self.setState({collection: gameCollection});
