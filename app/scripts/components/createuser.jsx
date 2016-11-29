@@ -2,6 +2,7 @@ var React = require('react');
 var Backbone = require('backbone');
 
 var User = require('../models/users.js').User;
+var setupParse = require('../parseUtilities').setupParse;
 
 var CreateUser = React.createClass({
   getInitialState: function(){
@@ -37,6 +38,7 @@ var CreateUser = React.createClass({
   },
   toLogIn: function(e){
     e.preventDefault();
+
     this.props.router.navigate('#', {trigger: true});
   },
   render: function(){
@@ -80,9 +82,28 @@ var CreateUserContainer = React.createClass({
       user: new User()
     }
   },
+  xboxSetup: function(){
+      $.ajaxSetup({
+        beforeSend: function(xhr){
+          xhr.setRequestHeader("X-Auth", 'c407153a0eb4d99cca60cfdd4d04351143907988');
+        }
+      });
+
+  },
   signUp: function(qusername, email, password, gamertag, router){
-    this.state.user.set({qusername: qusername, username: email, password: password, gamertag: gamertag, email: email});
-    this.state.user.signUp(router)
+    var self = this;
+
+    this.xboxSetup();
+
+    $.ajax('https://xboxapi.com/v2/xuid/' + gamertag).then(function(xuid){
+      var xuid = xuid;
+      setupParse('genji', 'junkrat');
+      console.log(xuid);
+
+      self.state.user.set({qusername: qusername, username: email, password: password, gamertag: gamertag, email: email, xuid: xuid});
+      self.state.user.signUp(router)
+    })
+
   },
   render: function(){
     return(
