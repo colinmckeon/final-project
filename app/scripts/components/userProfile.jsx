@@ -3,11 +3,11 @@ var Backbone = require('backbone');
 
 var Template = require('./templates.jsx').Template;
 var User = require('../models/users.js').User;
+var XboxOneGameCollection = require('../models/xboxApi.js').XboxOneGameCollection;
 
 
 var UserProfile = React.createClass({
   render: function(){
-    console.log(this.props.user);
     return (
       <div>
 
@@ -44,11 +44,19 @@ var UserProfile = React.createClass({
 var UserProfileContainer = React.createClass({
   getInitialState: function(){
     return{
-      user: User.current()
+      user: User.current(),
+      gameCollection: new XboxOneGameCollection()
     }
   },
+  componentWillMount: function(){
+    var gameCollection = this.state.gameCollection;
+    gameCollection.xboxGamesSetup();
+    // .done(function(){
+    //   console.log('xboxGamesSetup', gameCollection);
+    //
+    // });
+  },
   render: function(){
-    console.log(this.state.user);
     return (
       <div>
         <Template />

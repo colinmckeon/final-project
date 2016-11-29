@@ -5,6 +5,7 @@ var Template = require('./templates.jsx').Template;
 var CreateSquadModel = require('../models/squads.js').CreateSquadModel;
 var User = require('../models/users.js').User;
 var SquadMemberCollection = require('../models/squads.js').SquadMemberCollection;
+var setupParse = require('../parseUtilities.js').setupParse;
 
 var MyCurrentSquad = React.createClass({
   getInitialState: function(){
@@ -15,6 +16,8 @@ var MyCurrentSquad = React.createClass({
   componentWillMount: function(){
     var members = this.state.members;
     var self = this;
+
+    setupParse('genji', 'junkrat');
 
     members.fetch().then(function(){
       self.setState({members: members});
@@ -29,6 +32,7 @@ var MyCurrentSquad = React.createClass({
     Backbone.history.navigate('chooseGame/', {trigger: true})
   },
   render: function(){
+    var self = this;
     var creator = this.props.squad.get('creator');
     var isCreator = creator.objectId == User.current().get('objectId');
     return (
@@ -46,7 +50,7 @@ var MyCurrentSquad = React.createClass({
             {this.state.members.map(function(member){
               return (
                 <li key={member.cid}>
-                <a className="listedCurrentSquadMembers" href={'#userProfile/' + member.get('objectId')}>{member.get('qusername')}</a>
+                <a onClick={function(){self.props.handleSpecificGames(member)}} className="listedCurrentSquadMembers" href={'#userProfile/' + member.get('objectId')}>{member.get('qusername')}</a>
                 </li>
               )
             })}</ul>
@@ -86,13 +90,21 @@ var MyCurrentSquadContainer = React.createClass({
       self.setState({members: members});
     });
   },
+  handleSpecificGames: function(member){
+    localStorage.setItem('member', JSON.stringify(member));
+  },
   render: function(){
     return (
 
         <Template>
           <div className="container">
             <div className="row">
-              <MyCurrentSquad members={this.state.members} user={this.state.user} squad={this.state.squad}/>
+              <MyCurrentSquad
+                members={this.state.members}
+                user={this.state.user}
+                squad={this.state.squad}
+                handleSpecificGames={this.handleSpecificGames}
+                />
             </div>
           </div>
         </Template>
