@@ -107,6 +107,7 @@ label{
 }
 .gameCoverArtImage{
   height: 350px;
+  width: 270px;
 }
 //
 //END CHOOSE GAME SCREEN
@@ -224,16 +225,19 @@ label{
   color: #00AC1C;
   font-family: 'Numans', sans-serif;
   font-size: 80px;
+  font-weight: bold;
 }
 #gamertagLabel{
   color: #B2B4B3;
   display: inline-block;
   font-family: 'Numans', sans-serif;
+  font-size: 32px;
 }
 #profileGamertag{
   color: #00AC1C;
   display: inline-block;
   font-family: 'Numans', sans-serif;
+  font-size: 32px;
 }
 // #gamesPlayedByUser{
 //   height: 50px;

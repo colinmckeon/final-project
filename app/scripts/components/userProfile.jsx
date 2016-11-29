@@ -19,11 +19,10 @@ var UserProfile = React.createClass({
         <div className="row">
           <div className="col-md-3 col-md-offset-1">
             <div>
-              <div>
-                 <img src={this.props.user.get('avatar')} id="avatarUserProfile"></img>
-              </div>
+               <img src={this.props.user.get('avatar')} id="avatarUserProfile"></img>
             </div>
           </div>
+
 
           <div className="col-md-8">
             <div className="qusernameGamertagHolder">

@@ -24,14 +24,14 @@ var XboxOneGameCollection = Backbone.Collection.extend({
 
     this.xboxSetup();
 
-    $.ajax('https://xboxapi.com/v2/' + xuid + '/xboxonegames/').then(function(response){
-      self.set(response.titles);
-
-      setupParse('genji', 'junkrat');
-
-        callback();
-
-    })
+    // $.ajax('https://xboxapi.com/v2/' + xuid + '/xboxonegames/').then(function(response){
+    //   self.set(response.titles);
+    //
+    //   setupParse('genji', 'junkrat');
+    //
+    //     callback();
+    //
+    // })
 
     return this;
   },
