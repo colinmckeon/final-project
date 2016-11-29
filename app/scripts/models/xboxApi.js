@@ -20,7 +20,6 @@ var XboxOneGameCollection = Backbone.Collection.extend({
 
   },
   xboxGamesSetup: function(xuid, callback){
-    // var member = JSON.parse(localStorage.getItem('user'));
     var self = this;
 
     this.xboxSetup();

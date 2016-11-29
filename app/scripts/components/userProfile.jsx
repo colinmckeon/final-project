@@ -18,8 +18,8 @@ var UserProfile = React.createClass({
 
         <div className="col-md-3 col-md-offset-1">
           <div>
-            <div className="profilePictureHolder">
-               <img src={this.props.user.get('avatar')}></img>
+            <div>
+               <img src={this.props.user.get('avatar')} id="avatarUserProfile"></img>
             </div>
           </div>
         </div>
