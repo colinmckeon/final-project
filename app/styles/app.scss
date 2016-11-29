@@ -213,11 +213,6 @@ label{
 //
 //BEGINNING MY PROFILE SCREEN
 //
-.profilePictureHolder{
-  width: 100%;
-  height: 250px;
-  background-color: #00AC1C;
-}
 #avatarUserProfile{
   height: 250px;
   width: 250px;
@@ -227,23 +222,51 @@ label{
 }
 #profileQusername{
   color: #00AC1C;
+  font-family: 'Numans', sans-serif;
+  font-size: 80px;
 }
 #gamertagLabel{
   color: #B2B4B3;
   display: inline-block;
+  font-family: 'Numans', sans-serif;
 }
 #profileGamertag{
   color: #00AC1C;
   display: inline-block;
+  font-family: 'Numans', sans-serif;
 }
+// #gamesPlayedByUser{
+//   height: 50px;
+// }
 #mostPlayedGamesLabel{
   color: #B2B4B3;
+  font-family: 'Numans', sans-serif;
+}
+#listedGame{
+  color: #00AC1C;
+  font-family: 'Numans', sans-serif;
+}
+//
+//END MY PROFILE SCREEN
+//
+
+
+////////////////////////////////////////////
+
+
+//
+//BEGINNING SETTINGS SCREEN
+//
+.profilePictureHolder{
+  width: 250px;
+  height: 250px;
+  background-color: #00AC1C;
 }
 .profileGamesList{
   color: #00AC1C;
 }
 //
-//END MY PROFILE SCREEN
+//END SETTINGS SCREEN
 //
 
 
