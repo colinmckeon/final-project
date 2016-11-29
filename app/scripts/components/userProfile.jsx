@@ -8,6 +8,11 @@ var XboxOneGameCollection = require('../models/xboxApi.js').XboxOneGameCollectio
 
 var UserProfile = React.createClass({
   render: function(){
+    var gameName = this.props.gameCollection.map(function(game){
+      return(
+        <li key={game.cid}>{game.get('name')}</li>
+      )
+    });
     return (
       <div>
 
@@ -28,10 +33,7 @@ var UserProfile = React.createClass({
           <div>
             <h5 id="mostPlayedGamesLabel">Most Played Games:</h5>
             <ul>
-              <li className="profileGamesList">GAME #1</li>
-              <li className="profileGamesList">GAME #2</li>
-              <li className="profileGamesList">GAME #3</li>
-              <li className="profileGamesList">GAME #4</li>
+              {gameName}
             </ul>
           </div>
         </div>
@@ -44,17 +46,29 @@ var UserProfile = React.createClass({
 var UserProfileContainer = React.createClass({
   getInitialState: function(){
     return{
-      user: User.current(),
+      user: new User(),
       gameCollection: new XboxOneGameCollection()
     }
   },
   componentWillMount: function(){
     var gameCollection = this.state.gameCollection;
-    gameCollection.xboxGamesSetup();
-    // .done(function(){
-    //   console.log('xboxGamesSetup', gameCollection);
-    //
-    // });
+    var self = this;
+    var user = this.state.user
+
+      user.set('objectId', this.props.userId).fetch().then(function(){
+      self.setState({user: user})
+    });
+
+    gameCollection.xboxGamesSetup(xuid, function(){
+      var appsRemoved = gameCollection.filter(function(apps){
+        return apps.get('titleType') == 'LiveApp';
+      });
+      gameCollection.remove(appsRemoved);
+
+      var reducedCollection = gameCollection.slice(0, 10);
+
+      self.setState({gameCollection: reducedCollection});
+    });
   },
   render: function(){
     return (
@@ -62,7 +76,10 @@ var UserProfileContainer = React.createClass({
         <Template />
           <div className="container">
             <div className="row">
-              <UserProfile user={this.state.user}/>
+              <UserProfile
+                user={this.state.user}
+                gameCollection={this.state.gameCollection}
+                />
             </div>
           </div>
       </div>

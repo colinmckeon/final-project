@@ -52,9 +52,9 @@ var AppRouter = Backbone.Router.extend({
         document.getElementById('app')
       );
     },
-    userProfile: function(){
+    userProfile: function(userId){
       ReactDOM.render(
-        React.createElement(UserProfileContainer),
+        React.createElement(UserProfileContainer, {userId: userId}),
         document.getElementById('app')
       );
     },

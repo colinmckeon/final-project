@@ -97,8 +97,8 @@ var CreateUserContainer = React.createClass({
 
     $.ajax('https://xboxapi.com/v2/xuid/' + gamertag).then(function(xuid){
       var xuid = xuid;
+      
       setupParse('genji', 'junkrat');
-      console.log(xuid);
 
       self.state.user.set({qusername: qusername, username: email, password: password, gamertag: gamertag, email: email, xuid: xuid});
       self.state.user.signUp(router)

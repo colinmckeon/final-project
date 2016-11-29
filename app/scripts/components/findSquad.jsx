@@ -66,7 +66,7 @@ var FindSquadContainer = React.createClass({
     var self = this;
     var collection = this.state.collection;
     collection.gameId = this.props.gameId;
-    console.log(collection.gameId);
+    
     collection.fetch().then(function(response){
       self.setState({squadListing: response.results});
     });

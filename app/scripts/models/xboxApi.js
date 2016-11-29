@@ -16,13 +16,17 @@ var XboxOneGameCollection = Backbone.Collection.extend({
       });
 
   },
-  xboxGamesSetup: function(){
-    var member = JSON.parse(localStorage.getItem('member'));
+  xboxGamesSetup: function(xuid, callback){
+    // var member = JSON.parse(localStorage.getItem('user'));
+    var self = this;
 
     this.xboxSetup();
 
-    $.ajax('https://xboxapi.com/v2/' + member.xuid + '/xboxonegames/').then(function(response){
-      console.log(response.titles);
+    $.ajax('https://xboxapi.com/v2/' + xuid + '/xboxonegames/').then(function(response){
+      self.set(response.titles);
+
+        callback();
+
     })
 
     return this;
