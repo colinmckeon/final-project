@@ -1,5 +1,8 @@
 var Backbone = require('backbone');
 
+var setupParse = require('../parseUtilities.js').setupParse;
+
+
 var XboxOneGame = Backbone.Model.extend({
   idAttribute: 'objectId'
 });
@@ -24,6 +27,8 @@ var XboxOneGameCollection = Backbone.Collection.extend({
 
     $.ajax('https://xboxapi.com/v2/' + xuid + '/xboxonegames/').then(function(response){
       self.set(response.titles);
+
+      setupParse('genji', 'junkrat');
 
         callback();
 

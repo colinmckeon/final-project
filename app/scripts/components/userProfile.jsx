@@ -56,19 +56,21 @@ var UserProfileContainer = React.createClass({
     var user = this.state.user
 
       user.set('objectId', this.props.userId).fetch().then(function(){
-      self.setState({user: user})
-    });
+      self.setState({user: user});
 
-    gameCollection.xboxGamesSetup(xuid, function(){
-      var appsRemoved = gameCollection.filter(function(apps){
-        return apps.get('titleType') == 'LiveApp';
+      gameCollection.xboxGamesSetup(user.get('xuid'), function(){
+        var appsRemoved = gameCollection.filter(function(apps){
+          return apps.get('titleType') == 'LiveApp';
+        });
+        gameCollection.remove(appsRemoved);
+
+        var reducedCollection = gameCollection.slice(0, 10);
+
+        self.setState({gameCollection: reducedCollection});
       });
-      gameCollection.remove(appsRemoved);
-
-      var reducedCollection = gameCollection.slice(0, 10);
-
-      self.setState({gameCollection: reducedCollection});
     });
+
+
   },
   render: function(){
     return (
