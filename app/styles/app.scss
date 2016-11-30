@@ -43,6 +43,7 @@ body{
 }
 label{
   color: #00AC1C;
+  font-family: 'Numans', sans-serif;
 }
 .login-button-holder{
   text-align: center;
@@ -52,15 +53,18 @@ label{
   font-weight: bold;
   font-size: 16px;
   float: left;
+  font-family: 'Roboto', sans-serif;
 }
 #or-span{
   color: #B2B4B3;
   font-size: 20px;
+  font-family: 'Roboto', sans-serif;
 }
 #create-newuser-button{
   float: right;
   background-color: #262831;
   color: #00AC1C;
+  font-family: 'Numans', sans-serif;
 }
 //
 //END LOGIN STYLE
@@ -73,15 +77,21 @@ label{
 //
 //BEGINNING CREATE USER
 //
+#createUserTitle{
+  font-family: 'Roboto', sans-serif;
+  color: #B2B4B3;
+}
 .create-account-btn{
   background-color: #00AC1C;
   font-weight: bold;
   font-size: 16px;
+  font-family: 'Roboto', sans-serif;
 }
 #goBackButton{
   float: right;
   background-color: #262831;
   color: #00AC1C;
+  font-family: 'Numans', sans-serif;
 }
 //
 //END CREATE USER STYLE
@@ -97,6 +107,7 @@ label{
 #chooseGameScreenTitle{
   color: #00AC1C;
   text-align: center;
+  font-family: 'Roboto', sans-serif;
 }
 .gameCover-holder{
   height: 450px;
@@ -104,6 +115,7 @@ label{
 }
 .chooseGameTitle{
   color: #00AC1C;
+  font-family: 'Numans', sans-serif;
 }
 .gameCoverArtImage{
   height: 350px;
@@ -140,6 +152,7 @@ label{
 //
 .createSquadTitleHolder{
   text-align: center;
+  font-family: 'Roboto', sans-serif;
 }
 #createSquadTitle{
   color: #00AC1C;
@@ -155,6 +168,7 @@ label{
   color: #262831;
   background-color: #00AC1C;
   font-weight: bold;
+  font-family: 'Roboto', sans-serif;
 }
 //
 //END CREATE SQUAD SCREEN
@@ -168,11 +182,20 @@ label{
 #findSquadTitle{
   color: #00AC1C;
   text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+#playersNeededTitle{
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+}
+#squadMessageJoinSquad{
+  font-family: 'Numans', sans-serif;
 }
 .joinSquadButton{
   color: #262831;
   background-color: #00AC1C;
   font-weight: bold;
+  font-family: 'Roboto', sans-serif;
 }
 //
 //END CREATE SQUAD SCREEN

@@ -32,8 +32,8 @@ var FindSquad = React.createClass({
         <div className="col-md-6" key={squad.objectId}>
           <div className="well">
 
-            <h4>Players Needed: {squad.players}</h4>
-            <p>{squad.message}</p>
+            <h4 id="playersNeededTitle">Players Needed: {squad.players}</h4>
+            <p id="squadMessageJoinSquad">{squad.message}</p>
 
             <div>
             <button onClick={function(){self.toMyCurrentSquad(squad.objectId)}} className="btn joinSquadButton" type="button">Join Squad <i className="fa fa-gamepad" aria-hidden="true"></i></button>
@@ -66,7 +66,7 @@ var FindSquadContainer = React.createClass({
     var self = this;
     var collection = this.state.collection;
     collection.gameId = this.props.gameId;
-    
+
     collection.fetch().then(function(response){
       self.setState({squadListing: response.results});
     });

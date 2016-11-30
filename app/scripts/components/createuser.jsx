@@ -44,7 +44,7 @@ var CreateUser = React.createClass({
   render: function(){
     return(
       <div className="col-md-8 col-md-offset-2">
-        <h2>Need an Account? Sign Up!</h2>
+        <h2 id="createUserTitle">Need an Account? Sign Up!</h2>
         <form onSubmit={this.handleSignUp} id="signup">
 
           <div className="form-group">
@@ -97,7 +97,7 @@ var CreateUserContainer = React.createClass({
 
     $.ajax('https://xboxapi.com/v2/xuid/' + gamertag).then(function(xuid){
       var xuid = xuid;
-      
+
       setupParse('genji', 'junkrat');
 
       self.state.user.set({qusername: qusername, username: email, password: password, gamertag: gamertag, email: email, xuid: xuid});
