@@ -35,12 +35,14 @@ var ProfileSettings = React.createClass({
       <div>
 
         <div className="row">
-          <div className="col-md-3 col-md-offset-1">
+          <div className="col-md-3 col-md-offset-1 alignmentProfilePictureHolder">
               <div className="profilePictureHolder">
+                <span id="uploadAvatarIcon"><i className="fa fa-plus-square" aria-hidden="true"></i></span>
                 <form onSubmit={this.handleSubmit} id="avatarForm" action="/dist/" method="POST" encType="multipart/form-data">
                   <input onChange={this.handleAvatar} type="file" id="avatar" name="avatar"/>
-                  <input type="submit"/>
+                  <input id="avatarSubmitButton" className="btn" type="submit"/>
                 </form>
+                <h4 id="uploadAvatarCaption">Upload Profile Image <i className="fa fa-hand-o-up" aria-hidden="true"></i></h4>
               </div>
           </div>
 

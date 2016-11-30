@@ -266,10 +266,42 @@ label{
 //
 //BEGINNING SETTINGS SCREEN
 //
+// .alignmentProfilePictureHolder{
+//   text-align: center;
+// }
 .profilePictureHolder{
   width: 250px;
   height: 250px;
-  background-image: url("../images/uploadPhoto.png");
+  // background-image: url("../images/uploadPhoto.png");
+  position: relative;
+  margin: 0 auto;
+}
+#uploadAvatarIcon{
+  font-size: 260px;
+  position: absolute;
+  left: 25px;
+  bottom: -50px;
+}
+#avatar{
+  position: absolute;
+  left: 40px;
+  bottom: 160px;
+  color: #B2B4B3;
+  font-family: 'Roboto', sans-serif;
+}
+#avatarSubmitButton{
+  position: absolute;
+  left: 40px;
+  bottom: 70px;
+  background-color: #F75E25;
+  color: #262831;
+  font-family: 'Roboto', sans-serif;
+}
+#uploadAvatarCaption{
+  position: absolute;
+  left: 40px;
+  bottom: -10px;
+  color: #F75E25;
 }
 .profileGamesList{
   color: #00AC1C;
