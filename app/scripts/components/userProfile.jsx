@@ -43,18 +43,22 @@ var UserProfile = React.createClass({
         </div>
 
         <div className="row">
-          <div className="col-md-4 col-md-offset-2">
-            <div id="gamesPlayedByUser">
-              <h5 id="mostPlayedGamesLabel">Games played by {this.props.user.get('qusername')}</h5>
+          <div className="col-md-4 col-md-offset-4">
+            <h5 id="mostPlayedGamesLabel">Games played by {this.props.user.get('qusername')}</h5>
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col-md-5 col-md-offset-1">
+            <div className="gamesPlayedByUser">
               <ul>
                 {leftGames}
               </ul>
             </div>
           </div>
 
-          <div className="col-md-4">
-            <div id="gamesPlayedByUser">
-              <h5 id="mostPlayedGamesLabel">Games played by {this.props.user.get('qusername')}</h5>
+          <div className="col-md-5">
+            <div className="gamesPlayedByUser">
               <ul>
                 {rightGames}
               </ul>

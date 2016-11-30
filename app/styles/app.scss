@@ -242,12 +242,13 @@ label{
   font-family: 'Numans', sans-serif;
   font-size: 32px;
 }
-// #gamesPlayedByUser{
-//   height: 50px;
-// }
+.gamesPlayedByUser{
+  border: 1px #00AC1C solid;
+}
 #mostPlayedGamesLabel{
   color: #B2B4B3;
   font-family: 'Numans', sans-serif;
+  text-align: center;
 }
 #listedGame{
   color: #00AC1C;
