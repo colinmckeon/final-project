@@ -37,6 +37,10 @@ body{
 //
 //BEGINNING LOGIN STYLE
 //
+#signInTitle{
+  font-family: 'Roboto', sans-serif;
+  color: #B2B4B3;
+}
 label{
   color: #00AC1C;
 }
@@ -183,26 +187,34 @@ label{
 .squadCreatorTitle{
   color: #B2B4B3;
   display: inline-block;
+  font-family: 'Roboto', sans-serif;
 }
 #squadCreatorLink{
   font-size: 22px;
   color: #00AC1C;
+  font-family: 'Numans', sans-serif;
 }
 .squadMembersTitleCurrentSquad{
   color: #B2B4B3;
+  font-family: 'Roboto', sans-serif;
 }
 .listedCurrentSquadMembers{
   color: #00AC1C;
+  font-family: 'Numans', sans-serif;
 }
 #squadCreatorMessageTitle{
-  color: #00AC1C;
+  color: #B2B4B3;
+  font-family: 'Roboto', sans-serif;
 }
 .creatorMessageCurrentSquad{
   color: #262831;
+  font-family: 'Numans', sans-serif;
 }
 .removeSquadButton{
   font-weight: bold;
   background-color: #F75E25;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
 }
 //
 //END MY CURRENT SQUAD SCREEN
@@ -305,6 +317,7 @@ label{
 }
 .profileGamesList{
   color: #00AC1C;
+  font-family: 'Numans', sans-serif;
 }
 //
 //END SETTINGS SCREEN

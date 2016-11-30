@@ -34,7 +34,7 @@ var User = require('../models/users.js').User;
    render: function(){
      return (
        <div className="col-md-8 col-md-offset-2">
-             <h2>Sign in Here!</h2>
+             <h2 id="signInTitle">Sign in Here!</h2>
              <form onSubmit={this.handleLogIn} id="login">
                <div className="form-group">
                  <label forHTML="email-login">Email address</label>
