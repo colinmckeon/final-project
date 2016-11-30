@@ -71,7 +71,7 @@ var Footer = React.createClass({
 
                 <div className="col-md-5">
                   <div id="developedByHolder">
-                    <h5>Developed and Designed by Colin McKeon</h5>
+                    <h5 className="footerInfo">|&nbsp; Developed and Designed by Colin McKeon &nbsp;|</h5>
                   </div>
                 </div>
 
@@ -83,7 +83,7 @@ var Footer = React.createClass({
 
                 <div className="col-md-5">
                   <div id="contactInfoHolder">
-                    <h5>14mckeon@gmail.com</h5>
+                    <h5 className="footerInfo">|&nbsp; Contact at 14mckeon@gmail.com &nbsp;|</h5>
                   </div>
                 </div>
 

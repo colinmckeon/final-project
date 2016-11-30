@@ -372,6 +372,7 @@ label{
 .footer{
   height: 70px;
   background-color: #B2B4B3;
+  border-radius: 10px 10px 0 0;
 }
 #footerInfoHolder{
   text-align: center;
@@ -390,6 +391,10 @@ label{
 #contactInfoHolder{
   display: inline-block;
   margin-top: 16px;
+}
+.footerInfo{
+  font-family: 'Roboto', sans-serif;
+  color: #262831;
 }
 //
 //END FOOTER
