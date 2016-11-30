@@ -34,35 +34,54 @@ var ProfileSettings = React.createClass({
     return (
       <div>
 
-        <div className="col-md-3 col-md-offset-1">
-          <div>
+        <div className="row">
+          <div className="col-md-3 col-md-offset-1">
+              <div className="profilePictureHolder">
+                <form onSubmit={this.handleSubmit} id="avatarForm" action="/dist/" method="POST" encType="multipart/form-data">
+                  <input onChange={this.handleAvatar} type="file" id="avatar" name="avatar"/>
+                  <input type="submit"/>
+                </form>
+              </div>
+          </div>
 
-            <div className="profilePictureHolder">
-              <form onSubmit={this.handleSubmit} id="avatarForm" action="/dist/" method="POST" encType="multipart/form-data">
-                <input onChange={this.handleAvatar} type="file" id="avatar" name="avatar"/>
-                <br/>
-                <br/>
-                <input type="submit"/>
-              </form>
+          <div className="col-md-8">
+            <div className="qusernameGamertagHolder">
+              <h1 id="profileQusername">{this.props.user.get('qusername')}</h1>
+              <h5 id="gamertagLabel">XBOX Live Gamertag: </h5> &nbsp;
+              <h5 id="profileGamertag">{this.props.user.get('gamertag')}</h5>
             </div>
-
           </div>
         </div>
 
-        <div className="col-md-8">
-          <div className="qusernameGamertagHolder">
-            <h1 id="profileQusername">{this.props.user.get('qusername')}</h1>
-            <h5 id="gamertagLabel">XBOX Live Gamertag: </h5> &nbsp;
-            <h5 id="profileGamertag">{this.props.user.get('gamertag')}</h5>
+        <div className="row">
+          <div className="col-md-4 col-md-offset-4">
+            <h5 id="mostPlayedGamesLabel">Games played by {this.props.user.get('qusername')}</h5>
           </div>
-          <div>
-            <h5 id="mostPlayedGamesLabel">Most Played Games:</h5>
-            <ul>
-              <li className="profileGamesList">GAME #1</li>
-              <li className="profileGamesList">GAME #2</li>
-              <li className="profileGamesList">GAME #3</li>
-              <li className="profileGamesList">GAME #4</li>
-            </ul>
+        </div>
+
+        <div className="row">
+          <div className="col-md-5 col-md-offset-1">
+            <div className="gamesPlayedByUser">
+              <ul>
+                <li className="profileGamesList">GAME #1</li>
+                <li className="profileGamesList">GAME #2</li>
+                <li className="profileGamesList">GAME #3</li>
+                <li className="profileGamesList">GAME #4</li>
+                <li className="profileGamesList">GAME #5</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="col-md-5">
+            <div className="gamesPlayedByUser">
+              <ul>
+                <li className="profileGamesList">GAME #6</li>
+                <li className="profileGamesList">GAME #7</li>
+                <li className="profileGamesList">GAME #8</li>
+                <li className="profileGamesList">GAME #9</li>
+                <li className="profileGamesList">GAME #10</li>
+              </ul>
+            </div>
           </div>
         </div>
 
@@ -85,10 +104,16 @@ var ProfileSettingsContainer = React.createClass({
     return (
       <div>
         <Template>
-          <ProfileSettings
-            avatar={this.state.avatar}
-            user={this.state.user}
-            />
+
+          <div className="container">
+
+            <ProfileSettings
+              avatar={this.state.avatar}
+              user={this.state.user}
+              />
+
+          </div>
+
         </Template>
       </div>
     );
