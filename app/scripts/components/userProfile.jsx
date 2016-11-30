@@ -8,7 +8,16 @@ var XboxOneGameCollection = require('../models/xboxApi.js').XboxOneGameCollectio
 
 var UserProfile = React.createClass({
   render: function(){
-    var gameName = this.props.gameCollection.map(function(game){
+    var total = this.props.gameCollection.length;
+    var half = Math.floor(total/2);
+
+    var leftGames = this.props.gameCollection.slice(0, half).map(function(game){
+      return(
+        <li id="listedGame" key={game.cid}>{game.get('name')}</li>
+      )
+    });
+
+    var rightGames = this.props.gameCollection.slice(half, total).map(function(game){
       return(
         <li id="listedGame" key={game.cid}>{game.get('name')}</li>
       )
@@ -34,11 +43,20 @@ var UserProfile = React.createClass({
         </div>
 
         <div className="row">
-          <div className="col-md-8 col-md-offset-2">
+          <div className="col-md-4 col-md-offset-2">
             <div id="gamesPlayedByUser">
               <h5 id="mostPlayedGamesLabel">Games played by {this.props.user.get('qusername')}</h5>
               <ul>
-                {gameName}
+                {leftGames}
+              </ul>
+            </div>
+          </div>
+
+          <div className="col-md-4">
+            <div id="gamesPlayedByUser">
+              <h5 id="mostPlayedGamesLabel">Games played by {this.props.user.get('qusername')}</h5>
+              <ul>
+                {rightGames}
               </ul>
             </div>
           </div>
