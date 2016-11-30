@@ -37,6 +37,17 @@ body{
 //
 //BEGINNING LOGIN STYLE
 //
+#loginLogoHolder{
+  text-align: center;
+  background-color: #B2B4B3;
+  border-radius: 10px 10px 10px 10px;
+  // height: 300px;
+  // width: 400px;
+}
+#loginLogo{
+  height: 290px;
+  width: 390px;
+}
 #signInTitle{
   font-family: 'Roboto', sans-serif;
   color: #B2B4B3;

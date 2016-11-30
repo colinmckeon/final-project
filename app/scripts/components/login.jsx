@@ -33,7 +33,19 @@ var User = require('../models/users.js').User;
    },
    render: function(){
      return (
-       <div className="col-md-8 col-md-offset-2">
+       <div>
+
+          <div className="row">
+            <div className="col-md-10 col-md-offset-1">
+              <br/>
+               <div id="loginLogoHolder">
+                 <img id="loginLogo" src="images/RobotoFont/QUp_Roboto.png"></img>
+               </div>
+            </div>
+          </div>
+
+          <div className="row">
+           <div className="col-md-8 col-md-offset-2">
              <h2 id="signInTitle">Sign in Here!</h2>
              <form onSubmit={this.handleLogIn} id="login">
                <div className="form-group">
@@ -51,6 +63,9 @@ var User = require('../models/users.js').User;
                   <button onClick={this.toCreateUser} id="create-newuser-button" className="btn" type="submit">Create New Account</button>
                 </div>
              </form>
+            </div>
+          </div>
+
         </div>
      )
    }
@@ -71,11 +86,9 @@ var User = require('../models/users.js').User;
    render: function(){
      return (
        <div className="container">
-         <div className="row">
 
-           <LogIn logIn={this.logIn} router={this.props.router}/>
+         <LogIn logIn={this.logIn} router={this.props.router}/>
 
-         </div>
        </div>
      )
    }
