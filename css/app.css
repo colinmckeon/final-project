@@ -5766,17 +5766,28 @@ button.close {
 img {
   max-width: 100%; }
 
+li {
+  color: white; }
+
 body {
   background-color: #262831; }
 
-h2 {
-  color: #00AC1C; }
+#loginLogoHolder {
+  text-align: center;
+  background-color: #B2B4B3;
+  border-radius: 10px 10px 10px 10px; }
 
-#example {
-  color: white; }
+#loginLogo {
+  height: 290px;
+  width: 390px; }
+
+#signInTitle {
+  font-family: 'Roboto', sans-serif;
+  color: #B2B4B3; }
 
 label {
-  color: #00AC1C; }
+  color: #00AC1C;
+  font-family: 'Numans', sans-serif; }
 
 .login-button-holder {
   text-align: center; }
@@ -5785,51 +5796,82 @@ label {
   background-color: #00AC1C;
   font-weight: bold;
   font-size: 16px;
-  float: left; }
+  float: left;
+  font-family: 'Roboto', sans-serif; }
 
 #or-span {
   color: #B2B4B3;
-  font-size: 20px; }
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif; }
 
 #create-newuser-button {
   float: right;
   background-color: #262831;
-  color: #00AC1C; }
+  color: #00AC1C;
+  font-family: 'Numans', sans-serif; }
+
+#createUserTitle {
+  font-family: 'Roboto', sans-serif;
+  color: #B2B4B3; }
 
 .create-account-btn {
   background-color: #00AC1C;
   font-weight: bold;
-  font-size: 16px; }
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif; }
 
 #goBackButton {
   float: right;
   background-color: #262831;
-  color: #00AC1C; }
+  color: #00AC1C;
+  font-family: 'Numans', sans-serif; }
 
 #chooseGameScreenTitle {
   color: #00AC1C;
+  text-align: center;
+  font-family: 'Roboto', sans-serif; }
+
+.gameCover-holder {
+  height: 450px;
   text-align: center; }
 
 .chooseGameTitle {
-  color: #00AC1C; }
+  color: #00AC1C;
+  font-family: 'Numans', sans-serif; }
+
+.gameCoverArtImage {
+  height: 350px;
+  width: 270px; }
+
+.joinCreateSquadModal {
+  background-color: rgba(0, 172, 28, 0.7);
+  border: 4px #262831 solid;
+  outline: none !important;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 175px; }
 
 .findSquadButton {
   display: inline-block;
   background-color: #262831;
-  color: #00AC1C; }
+  color: #00AC1C;
+  font-family: 'Roboto', sans-serif; }
 
 .modal-or {
   text-align: center;
   font-weight: bold;
-  font-size: 28px; }
+  font-size: 28px;
+  color: #262831; }
 
 .createSquadButton {
   display: inline-block;
-  background-color: #00AC1C;
-  color: #262831; }
+  background-color: #262831;
+  color: #00AC1C;
+  font-family: 'Roboto', sans-serif; }
 
 .createSquadTitleHolder {
-  text-align: center; }
+  text-align: center;
+  font-family: 'Roboto', sans-serif; }
 
 #createSquadTitle {
   color: #00AC1C; }
@@ -5844,15 +5886,203 @@ label {
 #createNewSquadButton {
   color: #262831;
   background-color: #00AC1C;
-  font-weight: bold; }
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif; }
 
 #findSquadTitle {
   color: #00AC1C;
-  text-align: center; }
+  text-align: center;
+  font-family: 'Roboto', sans-serif; }
+
+#playersNeededTitle {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold; }
+
+#squadMessageJoinSquad {
+  font-family: 'Numans', sans-serif; }
 
 .joinSquadButton {
   color: #262831;
   background-color: #00AC1C;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif; }
+
+.squadCreatorTitle {
+  color: #B2B4B3;
+  display: inline-block;
+  font-family: 'Roboto', sans-serif; }
+
+#squadCreatorLink {
+  font-size: 22px;
+  color: #00AC1C;
+  font-family: 'Numans', sans-serif; }
+
+.squadMembersTitleCurrentSquad {
+  color: #B2B4B3;
+  font-family: 'Roboto', sans-serif; }
+
+.listedCurrentSquadMembers {
+  color: #00AC1C;
+  font-family: 'Numans', sans-serif; }
+
+#squadCreatorMessageTitle {
+  color: #B2B4B3;
+  font-family: 'Roboto', sans-serif; }
+
+.creatorMessageCurrentSquad {
+  color: #262831;
+  font-family: 'Numans', sans-serif; }
+
+.removeSquadButton {
+  font-weight: bold;
+  background-color: #F75E25;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px; }
+
+#avatarHolder {
+  text-align: center; }
+
+#avatarUserProfile {
+  height: 250px;
+  width: 250px; }
+
+.qusernameGamertagHolder {
+  text-align: center; }
+
+#profileQusername {
+  color: #00AC1C;
+  font-family: 'Numans', sans-serif;
+  font-size: 80px;
   font-weight: bold; }
+
+#gamertagLabel {
+  color: #B2B4B3;
+  display: inline-block;
+  font-family: 'Numans', sans-serif;
+  font-size: 32px; }
+
+#profileGamertag {
+  color: #00AC1C;
+  display: inline-block;
+  font-family: 'Numans', sans-serif;
+  font-size: 32px; }
+
+.gamesPlayedByUser {
+  border: 1px #00AC1C solid; }
+
+#mostPlayedGamesLabel {
+  color: #B2B4B3;
+  font-family: 'Numans', sans-serif;
+  text-align: center;
+  font-size: 18px; }
+
+#listedGame {
+  color: #00AC1C;
+  font-family: 'Numans', sans-serif; }
+
+.profilePictureHolder {
+  width: 250px;
+  height: 250px;
+  position: relative;
+  margin: 0 auto; }
+
+#uploadAvatarIcon {
+  font-size: 260px;
+  position: absolute;
+  left: 25px;
+  bottom: -50px; }
+
+#avatar {
+  position: absolute;
+  left: 40px;
+  bottom: 160px;
+  color: #B2B4B3;
+  font-family: 'Roboto', sans-serif; }
+
+#avatarSubmitButton {
+  position: absolute;
+  left: 40px;
+  bottom: 70px;
+  background-color: #F75E25;
+  color: #262831;
+  font-family: 'Roboto', sans-serif; }
+
+#uploadAvatarCaption {
+  position: absolute;
+  left: 40px;
+  bottom: -10px;
+  color: #F75E25; }
+
+.profileGamesList {
+  color: #00AC1C;
+  font-family: 'Numans', sans-serif; }
+
+.content {
+  min-height: calc(100vh - 50px); }
+
+.navbar {
+  background-color: #B2B4B3; }
+
+#squadsNavBarDropdown {
+  color: #262831;
+  font-family: 'Roboto', sans-serif;
+  font-size: 17px; }
+
+.navBarDropdownLinks {
+  color: #262831;
+  font-family: 'Roboto', sans-serif; }
+
+#dropdownBackgroundA {
+  background-color: #00AC1C; }
+
+#dropdownBackgroundB {
+  background-color: #00AC1C; }
+
+#seperatorDropdownA {
+  background-color: #262831; }
+
+#seperatorDropdownB {
+  background-color: #262831; }
+
+#myProfileNavBarDropdown {
+  color: #262831;
+  font-family: 'Roboto', sans-serif;
+  font-size: 17px; }
+
+#logOutNavBarLink {
+  color: #262831;
+  font-family: 'Roboto', sans-serif;
+  font-size: 17px; }
+
+.navBarLogo {
+  height: 55px;
+  width: 105px; }
+
+.footer {
+  height: 70px;
+  background-color: #B2B4B3;
+  border-radius: 10px 10px 0 0; }
+
+#footerInfoHolder {
+  text-align: center; }
+
+#developedByHolder {
+  display: inline-block;
+  margin-top: 16px; }
+
+.footerLogoHolder {
+  display: inline-block; }
+
+.footerLogo {
+  height: 68px;
+  width: 120px; }
+
+#contactInfoHolder {
+  display: inline-block;
+  margin-top: 16px; }
+
+.footerInfo {
+  font-family: 'Roboto', sans-serif;
+  color: #262831; }
 
 /*# sourceMappingURL=app.css.map */
