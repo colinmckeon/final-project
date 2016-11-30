@@ -65,7 +65,31 @@ var Footer = React.createClass({
     return (
       <div>
         <footer className="footer">
+          <div className="container">
+            <div className="row">
+              <div id="footerInfoHolder">
 
+                <div className="col-md-5">
+                  <div id="developedByHolder">
+                    <h5>Developed and Designed by Colin McKeon</h5>
+                  </div>
+                </div>
+
+                <div className="col-md-2">
+                  <div className="footerLogoHolder">
+                    <img className="footerLogo" src="images/RobotoFont/QUp_Roboto.svg"></img>
+                  </div>
+                </div>
+
+                <div className="col-md-5">
+                  <div id="contactInfoHolder">
+                    <h5>14mckeon@gmail.com</h5>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
         </footer>
       </div>
     );

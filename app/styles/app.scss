@@ -355,7 +355,7 @@ label{
   font-size: 17px;
 }
 .navBarLogo{
-  height: 54px;
+  height: 55px;
   width: 105px;
 }
 //
@@ -372,6 +372,24 @@ label{
 .footer{
   height: 70px;
   background-color: #B2B4B3;
+}
+#footerInfoHolder{
+  text-align: center;
+}
+#developedByHolder{
+  display: inline-block;
+  margin-top: 16px;
+}
+.footerLogoHolder{
+  display: inline-block;
+}
+.footerLogo{
+  height: 68px;
+  width: 120px;
+}
+#contactInfoHolder{
+  display: inline-block;
+  margin-top: 16px;
 }
 //
 //END FOOTER
