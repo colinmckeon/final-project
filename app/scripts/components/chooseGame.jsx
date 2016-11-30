@@ -49,8 +49,11 @@ var Game = React.createClass({
     });
       return(
 
-        <div>
-          <Modal isOpen={this.state.modalIsOpen}>
+        <div id="modalHolder">
+          <h1 id="chooseGameScreenTitle">Find or Create a Squad to "QueueUp"</h1>
+          {gameHtml}
+
+          <Modal className="joinCreateSquadModal" isOpen={this.state.modalIsOpen}>
             <div>
               <button onClick={this.closeModal}> <i className="fa fa-times" aria-hidden="true"></i> </button>
             </div>
@@ -71,9 +74,9 @@ var Game = React.createClass({
               <div>
                 <button onClick={this.toCreateSquad} type="button" className="btn btn-lg btn-block createSquadButton">Create a QueueSquad</button>
               </div>
+            <br />
+            <br />
           </Modal>
-            <h1 id="chooseGameScreenTitle">Find or Create a Squad to "QueueUp"</h1>
-            {gameHtml}
         </div>
       )
   }

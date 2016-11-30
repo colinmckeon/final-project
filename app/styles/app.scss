@@ -125,6 +125,12 @@ label{
 //END CHOOSE GAME SCREEN
 //
 //MODAL
+.joinCreateSquadModal{
+  background-color:rgba(0,172,28, 0.7);
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 175px;
+}
 .findSquadButton{
   display: inline-block;
   background-color: #262831;
@@ -139,13 +145,13 @@ label{
 }
 .createSquadButton{
   display: inline-block;
-  background-color: #00AC1C;
-  color: #262831;
+  background-color: #262831;
+  color: #00AC1C;
   font-family: 'Roboto', sans-serif;
 }
-.findSquadButtonHolder{
-  margin-top: 100px;
-}
+// .findSquadButtonHolder{
+//   margin-top: 100px;
+// }
 //END MODAL
 
 ////////////////////////////////////////////
