@@ -27,7 +27,7 @@ var UserProfile = React.createClass({
 
         <div className="row">
           <div className="col-md-3 col-md-offset-1">
-            <div>
+            <div id="avatarHolder">
                <img src={this.props.user.get('avatar')} id="avatarUserProfile"></img>
             </div>
           </div>

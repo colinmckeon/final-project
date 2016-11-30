@@ -96,6 +96,7 @@ label{
 }
 .gameCover-holder{
   height: 450px;
+  text-align: center;
 }
 .chooseGameTitle{
   color: #00AC1C;
@@ -213,6 +214,9 @@ label{
 //
 //BEGINNING MY PROFILE SCREEN
 //
+#avatarHolder{
+  text-align: center;
+}
 #avatarUserProfile{
   height: 250px;
   width: 250px;
