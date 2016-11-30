@@ -85,6 +85,7 @@ var ProfileSettings = React.createClass({
               </ul>
             </div>
           </div>
+          <br/>
         </div>
 
       </div>

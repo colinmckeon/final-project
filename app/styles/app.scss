@@ -286,6 +286,10 @@ label{
   font-family: 'Numans', sans-serif;
   font-size: 80px;
   font-weight: bold;
+
+  @media (max-width: 600px) {
+    font-size: 60px;
+  }
 }
 #gamertagLabel{
   color: #B2B4B3;
