@@ -83,7 +83,9 @@ var MyCurrentSquadContainer = React.createClass({
 
     setupParse('genji', 'junkrat');
 
-    currentSquad.fetch({data: {include: 'creator'}}).then(function(){
+    currentSquad.fetch({data: {include: 'creator'}, error: function(){
+      Backbone.history.navigate('chooseGame/', {trigger: true})
+    }}).then(function(){
       self.setState({squad: currentSquad});
     });
 

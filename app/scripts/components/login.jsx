@@ -20,8 +20,6 @@ var User = require('../models/users.js').User;
 
 
      this.props.logIn(email, password, router);
-
-     this.props.router.navigate('#chooseGame/', {trigger: true});
    },
    handleEmailInput: function(e){
      this.setState({email: e.target.value})

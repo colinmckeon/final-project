@@ -70,9 +70,9 @@ var UserProfileContainer = React.createClass({
         });
         gameCollection.remove(appsRemoved);
 
-        var reducedCollection = gameCollection.slice(0, 10);
+        // var reducedCollection = gameCollection.slice(0, 10);
 
-        self.setState({gameCollection: reducedCollection});
+        self.setState({gameCollection: gameCollection});
       });
     });
 
