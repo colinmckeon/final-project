@@ -38,19 +38,27 @@ var MyCurrentSquad = React.createClass({
     return (
       <div>
 
-        <div id="myCurrentSquadCreatorHolder">
-          <h2 className="squadCreatorTitle">Squad Creator: </h2> &nbsp;
-          <a id="squadCreatorLink" href={'#userProfile/' + creator.objectId}>
-            {creator.qusername}
-          </a>
-        </div>
-
-        <div id="myCurrentSquadImageHolder">
-          <img id="myCurrentSquadImage" src="images/pexels-photo-194511.jpeg"></img>
-        </div>
-
-
+        <div className="row">
           <div className="col-md-8 col-md-offset-2">
+
+            <div id="myCurrentSquadCreatorHolder">
+              <h2 className="squadCreatorTitle">Squad Creator: </h2> &nbsp;
+              <a id="squadCreatorLink" href={'#userProfile/' + creator.objectId}>
+                {creator.qusername}
+              </a>
+            </div>
+
+            <div id="myCurrentSquadImageHolder">
+              <img id="myCurrentSquadImage" src="images/pexels-photo-194511.jpeg"></img>
+            </div>
+
+          </div>
+        </div>
+
+
+
+        <div className="row">
+          <div className="col-md-10 col-md-offset-1">
 
             <div>
               <h5 className="squadMembersTitleCurrentSquad">Squad Members: <span id="squadMembersCaption">(click on username to view profile)</span></h5>
@@ -70,7 +78,9 @@ var MyCurrentSquad = React.createClass({
             </div>
 
             {isCreator ? <button className="btn removeSquadButton" onClick={this.handleDelete}>REMOVE SQUAD <i className="fa fa-trash-o" aria-hidden="true"></i></button> : null}
+          <br/>
           </div>
+        </div>
 
       </div>
     );
@@ -116,14 +126,14 @@ var MyCurrentSquadContainer = React.createClass({
 
         <Template>
           <div className="container">
-            <div className="row">
+
               <MyCurrentSquad
                 members={this.state.members}
                 user={this.state.user}
                 squad={this.state.squad}
                 handleSpecificGames={this.handleSpecificGames}
                 />
-            </div>
+
           </div>
         </Template>
 
