@@ -379,6 +379,7 @@ label{
 .profileGamesList{
   color: #F75E25;
   font-family: 'Numans', sans-serif;
+  padding-top: 2px;
 }
 //
 //END SETTINGS SCREEN
@@ -406,11 +407,17 @@ label{
   color: #262831;
   font-family: 'Roboto', sans-serif;
 }
+@media (max-width: 767px){
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a{
+    color: #262831;
+  }
+}
+
 #dropdownBackgroundA{
   background-color: #00AC1C;
 }
 #dropdownBackgroundB{
-  background-color: #00AC1C;
+  background-color: #F75E25;
 }
 #seperatorDropdownA{
   background-color: #262831;
