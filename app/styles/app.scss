@@ -70,6 +70,9 @@ label{
   color: #B2B4B3;
   font-size: 20px;
   font-family: 'Roboto', sans-serif;
+  @media (max-width: 600px) {
+    display: none;
+  }
 }
 #create-newuser-button{
   float: right;
@@ -475,7 +478,6 @@ label{
   color: #262831;
   @media (max-width: 1000px) {
     display: none;
-
   }
 }
 //
