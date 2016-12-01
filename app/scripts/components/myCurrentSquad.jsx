@@ -36,32 +36,42 @@ var MyCurrentSquad = React.createClass({
     var creator = this.props.squad.get('creator');
     var isCreator = creator.objectId == User.current().get('objectId');
     return (
-      <div className="col-md-8 col-md-offset-2">
-        <div>
+      <div>
+
+        <div id="myCurrentSquadCreatorHolder">
           <h2 className="squadCreatorTitle">Squad Creator: </h2> &nbsp;
           <a id="squadCreatorLink" href={'#userProfile/' + creator.objectId}>
             {creator.qusername}
           </a>
         </div>
 
-        <div>
-          <h5 className="squadMembersTitleCurrentSquad">Squad Members:</h5>
-          <ul>
-            {this.state.members.map(function(member){
-              return (
-                <li key={member.cid}>
-                <a onClick={function(){self.props.handleSpecificGames(member)}} className="listedCurrentSquadMembers" href={'#userProfile/' + member.get('objectId')}>{member.get('qusername')}</a>
-                </li>
-              )
-            })}</ul>
+        <div id="myCurrentSquadImageHolder">
+          <img id="myCurrentSquadImage" src="images/pexels-photo-194511.jpeg"></img>
         </div>
 
-        <div>
-          <h4 id="squadCreatorMessageTitle">Squad Creator's Message:</h4>
-          <h5 className="creatorMessageCurrentSquad well">{this.props.squad.get('message')}</h5>
-        </div>
-      
-        {isCreator ? <button className="btn removeSquadButton" onClick={this.handleDelete}>REMOVE SQUAD <i className="fa fa-trash-o" aria-hidden="true"></i></button> : null}
+
+          <div className="col-md-8 col-md-offset-2">
+
+            <div>
+              <h5 className="squadMembersTitleCurrentSquad">Squad Members: <span id="squadMembersCaption">(click on username to view profile)</span></h5>
+              <ul>
+                {this.state.members.map(function(member){
+                  return (
+                    <li key={member.cid}>
+                    <a onClick={function(){self.props.handleSpecificGames(member)}} className="listedCurrentSquadMembers" href={'#userProfile/' + member.get('objectId')}>{member.get('qusername')}</a>
+                    </li>
+                  )
+                })}</ul>
+            </div>
+
+            <div>
+              <h4 id="squadCreatorMessageTitle">Squad Creator's Message:</h4>
+              <h5 className="creatorMessageCurrentSquad well">{this.props.squad.get('message')}</h5>
+            </div>
+
+            {isCreator ? <button className="btn removeSquadButton" onClick={this.handleDelete}>REMOVE SQUAD <i className="fa fa-trash-o" aria-hidden="true"></i></button> : null}
+          </div>
+
       </div>
     );
   }

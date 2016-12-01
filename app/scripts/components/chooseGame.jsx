@@ -50,8 +50,9 @@ var Game = React.createClass({
       return(
 
         <div id="modalHolder">
-          <div className="chooseGameScreenTitle well">
-          <h1 id="chooseGameScreenTitle">Find or Create a Squad to "QueueUp"</h1>
+
+          <div className="chooseGameScreenTitle">
+            <h1 id="chooseGameScreenTitle">Find or Create a Squad to "QueueUp"</h1>
           </div>
           {gameHtml}
 
