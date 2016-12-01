@@ -35,6 +35,14 @@ var ProfileSettings = React.createClass({
       <div>
 
         <div className="row">
+          <div className="col-md-12">
+            <div id="profileSettingsTitle">
+              <h1>PROFILE SETTINGS <i className="fa fa-wrench" aria-hidden="true"></i></h1>
+            </div>
+          </div>
+        </div>
+
+        <div className="row">
           <div className="col-md-3 col-md-offset-1 alignmentProfilePictureHolder">
               <div className="profilePictureHolder">
                 <span id="uploadAvatarIcon"><i className="fa fa-plus-square" aria-hidden="true"></i></span>

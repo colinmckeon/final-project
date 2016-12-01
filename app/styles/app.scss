@@ -118,6 +118,9 @@ label{
 //
 //BEGINNING CHOOSE GAME SCREEN
 //
+.chooseGameScreenTitle{
+  background-color:rgba(178,180,179, 0.4);
+}
 #chooseGameScreenTitle{
   color: #00AC1C;
   text-align: center;
@@ -281,6 +284,7 @@ label{
 #avatarUserProfile{
   height: 250px;
   width: 250px;
+  border: 3px #00AC1C solid;
 }
 .qusernameGamertagHolder{
   text-align: center;
@@ -308,7 +312,7 @@ label{
   font-size: 32px;
 }
 .gamesPlayedByUser{
-  border: 1px #00AC1C solid;
+  border: 3px #00AC1C solid;
 }
 #mostPlayedGamesLabel{
   color: #B2B4B3;
@@ -317,8 +321,9 @@ label{
   font-size: 18px;
 }
 #listedGame{
-  color: #00AC1C;
+  color: #F75E25;
   font-family: 'Numans', sans-serif;
+  padding-top: 2px;
 }
 //
 //END MY PROFILE SCREEN
@@ -331,9 +336,12 @@ label{
 //
 //BEGINNING SETTINGS SCREEN
 //
-// .alignmentProfilePictureHolder{
-//   text-align: center;
-// }
+#profileSettingsTitle{
+  text-align: center;
+  color: #F75E25;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+}
 .profilePictureHolder{
   width: 250px;
   height: 250px;
@@ -369,7 +377,7 @@ label{
   color: #F75E25;
 }
 .profileGamesList{
-  color: #00AC1C;
+  color: #F75E25;
   font-family: 'Numans', sans-serif;
 }
 //
