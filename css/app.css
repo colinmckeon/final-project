@@ -5783,7 +5783,7 @@ body {
 
 #signInTitle {
   font-family: 'Roboto', sans-serif;
-  color: #B2B4B3; }
+  color: #F75E25; }
 
 label {
   color: #00AC1C;
@@ -5800,15 +5800,26 @@ label {
   font-family: 'Roboto', sans-serif; }
 
 #or-span {
-  color: #B2B4B3;
+  color: #F75E25;
   font-size: 20px;
   font-family: 'Roboto', sans-serif; }
+  @media (max-width: 600px) {
+    #or-span {
+      display: none; } }
 
 #create-newuser-button {
   float: right;
   background-color: #262831;
   color: #00AC1C;
   font-family: 'Numans', sans-serif; }
+
+#messageToUsersHolder {
+  text-align: center;
+  border: 3px #F75E25 solid; }
+
+#messageToUsers {
+  color: #00AC1C;
+  font-size: 16px; }
 
 #createUserTitle {
   font-family: 'Roboto', sans-serif;
@@ -5827,7 +5838,7 @@ label {
   font-family: 'Numans', sans-serif; }
 
 #chooseGameScreenTitle {
-  color: #00AC1C;
+  color: #F75E25;
   text-align: center;
   font-family: 'Roboto', sans-serif; }
 
@@ -5841,7 +5852,8 @@ label {
 
 .gameCoverArtImage {
   height: 350px;
-  width: 270px; }
+  width: 270px;
+  border: 3px #00AC1C solid; }
 
 .joinCreateSquadModal {
   background-color: rgba(0, 172, 28, 0.7);
@@ -5907,31 +5919,67 @@ label {
   font-weight: bold;
   font-family: 'Roboto', sans-serif; }
 
+#myCurrentSquadCreatorHolder {
+  text-align: center; }
+
+#myCurrentSquadImageHolder {
+  position: relative;
+  border: 3px #B2B4B3 solid; }
+
+#myCurrentSquadImageHolder:after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: .4;
+  background-color: #F75E25; }
+
+#myCurrentSquadImage {
+  height: 500px;
+  width: 100%; }
+  @media (max-width: 700px) {
+    #myCurrentSquadImage {
+      height: 350px;
+      width: 100%; } }
+
 .squadCreatorTitle {
   color: #B2B4B3;
   display: inline-block;
-  font-family: 'Roboto', sans-serif; }
+  font-family: 'Roboto', sans-serif;
+  font-size: 40px; }
 
 #squadCreatorLink {
-  font-size: 22px;
+  font-size: 40px;
   color: #00AC1C;
   font-family: 'Numans', sans-serif; }
 
 .squadMembersTitleCurrentSquad {
   color: #B2B4B3;
-  font-family: 'Roboto', sans-serif; }
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px; }
+
+#squadMembersCaption {
+  color: #F75E25; }
+  @media (max-width: 500px) {
+    #squadMembersCaption {
+      font-size: 13px; } }
 
 .listedCurrentSquadMembers {
   color: #00AC1C;
-  font-family: 'Numans', sans-serif; }
+  font-family: 'Numans', sans-serif;
+  font-size: 16px; }
 
 #squadCreatorMessageTitle {
   color: #B2B4B3;
-  font-family: 'Roboto', sans-serif; }
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px; }
 
 .creatorMessageCurrentSquad {
   color: #262831;
-  font-family: 'Numans', sans-serif; }
+  font-family: 'Numans', sans-serif;
+  font-size: 16px; }
 
 .removeSquadButton {
   font-weight: bold;
@@ -5944,7 +5992,8 @@ label {
 
 #avatarUserProfile {
   height: 250px;
-  width: 250px; }
+  width: 250px;
+  border: 3px #00AC1C solid; }
 
 .qusernameGamertagHolder {
   text-align: center; }
@@ -5954,6 +6003,9 @@ label {
   font-family: 'Numans', sans-serif;
   font-size: 80px;
   font-weight: bold; }
+  @media (max-width: 500px) {
+    #profileQusername {
+      font-size: 60px; } }
 
 #gamertagLabel {
   color: #B2B4B3;
@@ -5968,7 +6020,7 @@ label {
   font-size: 32px; }
 
 .gamesPlayedByUser {
-  border: 1px #00AC1C solid; }
+  border: 3px #00AC1C solid; }
 
 #mostPlayedGamesLabel {
   color: #B2B4B3;
@@ -5977,8 +6029,15 @@ label {
   font-size: 18px; }
 
 #listedGame {
-  color: #00AC1C;
-  font-family: 'Numans', sans-serif; }
+  color: #F75E25;
+  font-family: 'Numans', sans-serif;
+  padding-top: 2px; }
+
+#profileSettingsTitle {
+  text-align: center;
+  color: #F75E25;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif; }
 
 .profilePictureHolder {
   width: 250px;
@@ -6014,8 +6073,9 @@ label {
   color: #F75E25; }
 
 .profileGamesList {
-  color: #00AC1C;
-  font-family: 'Numans', sans-serif; }
+  color: #F75E25;
+  font-family: 'Numans', sans-serif;
+  padding-top: 2px; }
 
 .content {
   min-height: calc(100vh - 50px); }
@@ -6032,11 +6092,14 @@ label {
   color: #262831;
   font-family: 'Roboto', sans-serif; }
 
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #262831; } }
 #dropdownBackgroundA {
   background-color: #00AC1C; }
 
 #dropdownBackgroundB {
-  background-color: #00AC1C; }
+  background-color: #F75E25; }
 
 #seperatorDropdownA {
   background-color: #262831; }
@@ -6062,6 +6125,9 @@ label {
   height: 70px;
   background-color: #B2B4B3;
   border-radius: 10px 10px 0 0; }
+  @media (max-width: 1000px) {
+    .footer {
+      background-color: #262831; } }
 
 #footerInfoHolder {
   text-align: center; }
@@ -6076,12 +6142,29 @@ label {
 .footerLogo {
   height: 68px;
   width: 120px; }
+  @media (max-width: 1000px) {
+    .footerLogo {
+      margin-bottom: 40px;
+      background-color: #B2B4B3;
+      border-radius: 10px 10px 10px 10px; } }
 
 #contactInfoHolder {
   display: inline-block;
   margin-top: 16px; }
 
-.footerInfo {
+.footerInfoA {
   font-family: 'Roboto', sans-serif;
   color: #262831; }
+  @media (max-width: 1000px) {
+    .footerInfoA {
+      background-color: #B2B4B3;
+      border-radius: 4px 4px 4px 4px; } }
+
+.footerInfoB {
+  font-family: 'Roboto', sans-serif;
+  color: #262831; }
+  @media (max-width: 1000px) {
+    .footerInfoB {
+      display: none; } }
+
 /*# sourceMappingURL=app.css.map */
