@@ -287,7 +287,7 @@ label{
   font-size: 80px;
   font-weight: bold;
 
-  @media (max-width: 600px) {
+  @media (max-width: 500px) {
     font-size: 60px;
   }
 }
@@ -435,6 +435,9 @@ label{
   height: 70px;
   background-color: #B2B4B3;
   border-radius: 10px 10px 0 0;
+  @media (max-width: 1000px) {
+    background-color: #262831;
+  }
 }
 #footerInfoHolder{
   text-align: center;
@@ -449,14 +452,31 @@ label{
 .footerLogo{
   height: 68px;
   width: 120px;
+  @media (max-width: 1000px) {
+    margin-bottom: 40px;
+    background-color: #B2B4B3;
+    border-radius: 10px 10px 10px 10px;
+  }
 }
 #contactInfoHolder{
   display: inline-block;
   margin-top: 16px;
 }
-.footerInfo{
+.footerInfoA{
   font-family: 'Roboto', sans-serif;
   color: #262831;
+  @media (max-width: 1000px) {
+    background-color: #B2B4B3;
+    border-radius: 4px 4px 4px 4px;
+  }
+}
+.footerInfoB{
+  font-family: 'Roboto', sans-serif;
+  color: #262831;
+  @media (max-width: 1000px) {
+    display: none;
+
+  }
 }
 //
 //END FOOTER
